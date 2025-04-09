@@ -253,7 +253,7 @@ ul {
     border: none;
     cursor: pointer;
     padding: 10px;
-    z-index: 1001; /* Above header content, below mobile menu overlay */
+    z-index: 10001; /* Above header content, below mobile menu overlay */
 }
 
 .hamburger-btn span {
