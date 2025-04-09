@@ -1,0 +1,712 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-green: #1db954; /* Green from buttons */
+    --dark-bg: #1b241e; /* Dark greenish-grey background */
+    --light-grey-bg: #4f5e54; /* Lighter grey for form/boxes */
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --button-yellow: #cddc39; /* Yellowish Join Us button */
+    --font-primary: 'Poppins', sans-serif;
+    --header-nav-bg: rgba(60, 60, 60, 0.8); /* Semi-transparent dark grey for nav container */
+    --border-radius-sm: 5px;
+    --border-radius-md: 15px;
+    --border-radius-lg: 25px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+/* Default H1 size - will be overridden in Hero */
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.5rem; color: #9eacd1; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: var(--border-radius-lg); /* Default large radius */
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-nav-join {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+    border-radius: var(--border-radius-md); /* Make Join Us slightly less rounded */
+    padding: 10px 25px; /* Adjust padding to match visual */
+}
+
+/* Specific styles for Hero buttons */
+.hero .btn-primary,
+.hero .btn-secondary {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+    margin: 5px; /* Add small margin for spacing */
+    border-radius: 50px; /* More rounded pill shape */
+    padding: 12px 35px; /* Adjust padding */
+    font-weight: 600; /* Bolder text */
+}
+/* Remove default margin-right only for primary button */
+.hero .btn-primary {
+    margin-right: 5px;
+}
+
+
+.btn-helpline {
+    background-color: transparent;
+    border: 3px solid var(--primary-green);
+    color: var(--primary-green);
+    padding: 15px 40px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 20px 0;
+    border-radius: 50px;
+}
+.btn-helpline:hover {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+}
+
+.btn-chat {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+    padding: 10px 25px;
+    border-radius: 50px; /* Make chat button rounded too */
+}
+.btn-chat i { margin-left: 8px; }
+
+.btn-join-community {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 50px; /* Rounded */
+}
+
+.btn-movement-join {
+    background-color: var(--button-yellow);
+    color: var(--text-dark);
+    font-weight: 600;
+    padding: 15px 50px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    border-radius: 50px; /* Rounded */
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-title {
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+/* --- Header --- */
+.site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-light);
+    flex-shrink: 0;
+}
+
+.main-nav {
+    background-color: var(--header-nav-bg);
+    border-radius: 50px;
+    padding: 8px 15px;
+    margin: 0 20px;
+}
+
+.main-nav ul {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav li {
+     margin: 0 15px;
+}
+
+.main-nav a {
+    color: var(--text-light);
+    font-weight: 500;
+    padding-bottom: 0;
+    position: relative;
+    white-space: nowrap;
+}
+
+.main-nav a:hover {
+    color: #ddd;
+}
+
+
+/* --- Hero Section --- */
+.hero {
+    min-height: 90vh; /* Slightly taller if needed */
+    /* Background image with gradient overlay */
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(58, 74, 64, 0) 65%, /* Start fade */
+            var(--dark-bg) 100%      /* End fade */
+        ),
+        url('background.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 140px; /* Adjust padding top if header height changed */
+    padding-bottom: 60px; /* Add some bottom padding */
+    position: relative;
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px; /* Allow slightly wider content */
+}
+
+/* Updated Hero H1 styling */
+.hero h1 {
+    color: #dddddd;
+    font-size: 4.5rem; /* Larger font size */
+    font-weight: 700; /* Bolder */
+    line-height: 1.2; /* Adjust line spacing */
+    margin-bottom: 25px; /* Space below heading */
+}
+
+/* Styling for Hero paragraph */
+.hero p {
+    font-size: 1.15rem; /* Slightly larger paragraph text */
+    font-weight: 400; /* Regular weight */
+    max-width: 700px; /* Limit width */
+    margin: 0 auto 35px; /* Center and add space below */
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+
+/* --- Mission / Vision --- */
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.info-box {
+    background-color: var(--light-grey-bg);
+    padding: 30px;
+    border-radius: var(--border-radius-md);
+}
+
+.info-box h3 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+
+/* --- Helpline --- */
+.helpline-intro {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+.confidential-note {
+    color: #c15a5a;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+/* --- Awareness / Chat --- */
+
+.awareness-chat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* 2 columns */
+    gap: 40px;                      /* spacing between cells */
+    align-items: start;             /* top-align each cell in its row */
+    /* If you want the rows to auto-size, you can also use:
+       grid-auto-rows: minmax(auto, auto);
+    */
+  }
+  
+  .awareness-box {
+    /* Minimal styling to avoid extra spacing issues */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .awareness-box p {
+    margin: 0 0 12px; /* bottom margin for spacing between paragraphs */
+  }
+  
+  /* Bottom-right specific styling */
+  .share-story {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centers children vertically */
+    align-items: flex-start; /* or center if you need them centered horizontally */
+    height: 100%; /* ensure the container takes the full available height */
+    padding: 10px; /* adjust as needed */
+  }
+  
+  /* Make the button only as wide as its text needs */
+  .btn.btn-chat {
+    display: inline-flex;    /* keeps icon and text side by side */
+    align-items: center;
+    justify-content: center;
+  
+    background: #00C853;     /* your green color */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+  
+    width: auto;             /* ensure it does NOT stretch */
+    max-width: none;         /* remove any global max-width if present */
+    cursor: pointer;
+  
+    transition: background 0.3s ease;
+  }
+  
+  .btn.btn-chat i {
+    margin-left: 8px;
+  }
+  
+  .btn.btn-chat:hover {
+    background: #00b14f;
+  }
+
+/* ---------- */
+
+.email-contact {
+    margin-top: 20px;
+    font-weight: 500;
+}
+.email-contact a {
+    color: var(--primary-green);
+    text-decoration: underline;
+}
+.email-contact a:hover {
+    text-decoration: none;
+}
+
+.share-story h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* --- Connect --- */
+.connect-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.connect-form-wrapper {
+    background-color: var(--light-grey-bg);
+    padding: 40px;
+    border-radius: var(--border-radius-md);
+}
+
+.connect-form-wrapper .section-title {
+     margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    background-color: #e0e8e3;
+    color: var(--text-dark);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+}
+
+.connect-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* --- Testimonials --- */
+.testimonial-title {
+    /* text-align: center; <-- REMOVE or comment out */
+    line-height: 1.2;
+    margin-bottom: 60px; /* Increased margin */
+    display: flex; /* Use flexbox for side-by-side layout */
+    align-items: center; /* Vertically align items */
+    justify-content: center; /* Center the whole group */
+    gap: 25px; /* Space between REAL and the text block */
+}
+
+/* Updated "REAL" Text Styling */
+.real-text {
+    /* font-size: 3.5rem; <-- Adjust size as needed */
+    font-size: 5.5rem; /* Make it larger */
+    /* font-weight: 300; <-- Make it bolder */
+    font-weight: 700; /* Bolder */
+    /* border: 2px solid var(--text-light); <-- REMOVE border */
+    /* padding: 0 10px; <-- REMOVE padding */
+    /* display: inline-block; <-- REMOVE */
+    /* margin-bottom: 10px; <-- REMOVE margin */
+    color: transparent; /* Make fill transparent */
+    -webkit-text-stroke: 2px var(--text-light); /* Add white stroke (adjust width 1px/2px) */
+    line-height: 1; /* Keep line height tight */
+}
+
+/* New Style for the Text Block Next to REAL */
+.testimonial-subtitle {
+    font-size: 1.9rem; /* Adjust size */
+    font-weight: 600; /* Bold */
+    line-height: 1.4; /* Adjust line spacing */
+    text-align: left; /* Align text to the left */
+    color: var(--text-light);
+}
+
+
+.testimonial-slider {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 50px; /* Keep space for arrows */
+}
+
+.testimonial-slides .slide {
+    display: none;
+    background-color: var(--light-grey-bg);
+    padding: 40px;
+    border-radius: var(--border-radius-md);
+    text-align: center;
+}
+
+.testimonial-slides .slide.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.testimonial-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatar {
+    font-size: 5rem;
+    color: #a8b8ae;
+    margin-bottom: 10px;
+}
+
+blockquote {
+    font-size: 1.1rem;
+    font-style: italic;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+cite {
+    display: block;
+    margin-top: 15px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    color: var(--text-dark);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+.slider-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+
+/* --- Movement --- */
+.movement p {
+    max-width: 700px;
+    margin: 0 auto 20px;
+}
+
+/* --- Footer --- */
+.site-footer-bottom {
+    background-color: #000000;
+    color: #a0a0a0;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    position: relative;
+    margin-top: 80px;
+    font-size: 0.9rem;
+}
+
+.footer-curve {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: var(--dark-bg);
+    border-bottom-left-radius: 50% 40px;
+    border-bottom-right-radius: 50% 40px;
+    z-index: 1;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+}
+
+.footer-quote {
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+    font-weight: 100;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.footer-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-address {
+    line-height: 1.6;
+}
+
+.footer-social a {
+    color: #a0a0a0;
+    margin-left: 15px;
+    font-size: 1.5rem;
+}
+.footer-social a:hover {
+    color: var(--text-light);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.85rem;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 992px) {
+    h1 { font-size: 3.5rem; } /* Adjust hero h1 */
+    h2 { font-size: 2.1rem; }
+    
+    .awareness-chat-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .connect-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .connect-text {
+        text-align: center;
+    }
+
+    .testimonial-slider {
+        padding: 0 40px;
+    }
+
+    .main-nav li {
+        margin: 0 10px;
+    }
+     .main-nav {
+        margin: 0 10px;
+    }
+    .logo { font-size: 1.6rem; }
+    .btn-nav-join { padding: 8px 20px; font-size: 0.9rem;}
+}
+
+@media (max-width: 768px) {
+    .section-padding { padding: 60px 0; }
+
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .main-nav {
+        order: 2;
+        margin: 0 auto;
+        width: fit-content;
+        padding: 8px 10px;
+    }
+     .main-nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px 10px;
+    }
+     .main-nav li {
+        margin: 0 5px;
+    }
+    .logo { order: 1; }
+    .btn-nav-join { order: 3; margin-top: 0;}
+
+    .hero { min-height: 70vh; }
+    /* Adjust hero h1 for smaller screens */
+    .hero h1 { font-size: 3rem; line-height: 1.25; }
+    .hero p { font-size: 1.05rem; }
+    .hero { padding-top: 180px; padding-bottom: 40px; }
+
+    .mission-vision-grid { grid-template-columns: 1fr; }
+
+    .btn-helpline { font-size: 1.2rem; padding: 12px 30px; }
+
+    .testimonial-slider { padding: 0 10px; }
+    .slider-btn { width: 35px; height: 35px; font-size: 1rem; }
+    .prev-btn { left: -5px; }
+    .next-btn { right: -5px; }
+
+    .testimonial-content { padding: 20px; }
+    blockquote { font-size: 1rem; }
+
+    .footer-details { flex-direction: column; align-items: center; text-align: center; gap: 30px;}
+    .footer-social { margin-top: 10px; }
+    .footer-social a { margin: 0 8px; }
+}
+
+@media (max-width: 576px) {
+    body { font-size: 15px; }
+    /* Further adjust hero h1 for very small screens */
+    .hero h1 { font-size: 2.4rem; line-height: 1.3; }
+    .hero p { font-size: 1rem; }
+    h2 { font-size: 1.9rem; }
+    h3 { font-size: 1.4rem; }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column; /* Stack buttons */
+        gap: 15px;
+        align-items: center;
+    }
+    .hero .btn-primary,
+    .hero .btn-secondary {
+        margin: 0; /* Remove horizontal margins */
+        width: 70%; /* Control width */
+        padding: 10px 20px; /* Adjust padding */
+    }
+
+    .real-text { font-size: 2.8rem; }
+    .avatar { font-size: 4rem; }
+
+    .footer-curve { height: 60px; top: -30px; }
+
+    .main-nav a { font-size: 0.9rem; }
+    .main-nav li { margin: 0 3px; }
+}
