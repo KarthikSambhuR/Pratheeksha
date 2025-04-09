@@ -8,9 +8,11 @@
     --button-yellow: #cddc39; /* Yellowish Join Us button */
     --font-primary: 'Poppins', sans-serif;
     --header-nav-bg: rgba(60, 60, 60, 0.8); /* Semi-transparent dark grey for nav container */
+    --mobile-nav-bg: #1f2b23; /* Slightly different dark for mobile menu */
     --border-radius-sm: 5px;
     --border-radius-md: 15px;
     --border-radius-lg: 25px;
+    --header-height: 80px; /* Define header height for positioning */
 }
 
 * {
@@ -29,6 +31,27 @@ body {
     color: var(--text-light);
     line-height: 1.7;
     font-size: 16px;
+    position: relative; /* Needed for potential overflow control */
+}
+
+
+
+
+.mobile-only {
+    display: none;
+}
+
+.desktop-only {
+    display: block;
+}
+
+
+
+
+
+/* Prevent body scroll when mobile menu is open */
+body.no-scroll {
+    overflow: hidden;
 }
 
 .container {
@@ -81,8 +104,9 @@ ul {
 .btn-nav-join {
     background-color: var(--primary-green);
     color: var(--text-light);
-    border-radius: var(--border-radius-md); /* Make Join Us slightly less rounded */
+    border-radius: var(--border-radius-lg); /* Make Join Us slightly less rounded */
     padding: 10px 25px; /* Adjust padding to match visual */
+    /* Remove desktop-specific display property here, handle in media query */
 }
 
 /* Specific styles for Hero buttons */
@@ -161,14 +185,18 @@ ul {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 0;
+    padding: 15px 0; /* Slightly adjust padding */
     z-index: 1000;
+    height: var(--header-height);
+    display: flex; /* Use flex on header itself */
+    align-items: center; /* Vertically center content */
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%; /* Ensure container takes full width */
 }
 
 .logo {
@@ -178,11 +206,13 @@ ul {
     flex-shrink: 0;
 }
 
+/* Desktop Navigation Styles */
 .main-nav {
     background-color: var(--header-nav-bg);
     border-radius: 50px;
     padding: 8px 15px;
     margin: 0 20px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Added for mobile */
 }
 
 .main-nav ul {
@@ -201,9 +231,49 @@ ul {
     position: relative;
     white-space: nowrap;
 }
+.main-nav a.btn-nav-join { /* Style the link within li */
+     padding: 10px 25px; /* Keep original button padding */
+     display: inline-block; /* Ensure it behaves like a block */
+}
 
-.main-nav a:hover {
+.main-nav a:hover:not(.btn-nav-join) { /* Exclude button from simple hover color change */
     color: #ddd;
+}
+
+/* Hide the li containing the join button on desktop if needed, adjust as per design */
+.nav-join-us-li {
+     margin-left: 15px; /* Space before button */
+}
+
+
+/* Hamburger Button Styles */
+.hamburger-btn {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001; /* Above header content, below mobile menu overlay */
+}
+
+.hamburger-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-light);
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Optional: Style for active hamburger (X) */
+.hamburger-btn.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-btn.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 
@@ -225,7 +295,7 @@ ul {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 140px; /* Adjust padding top if header height changed */
+    padding-top: calc(var(--header-height) + 60px); /* Adjust padding based on header */
     padding-bottom: 60px; /* Add some bottom padding */
     position: relative;
 }
@@ -299,21 +369,17 @@ ul {
     grid-template-columns: 1fr 1fr;  /* 2 columns */
     gap: 40px;                      /* spacing between cells */
     align-items: start;             /* top-align each cell in its row */
-    /* If you want the rows to auto-size, you can also use:
-       grid-auto-rows: minmax(auto, auto);
-    */
   }
-  
+
   .awareness-box {
-    /* Minimal styling to avoid extra spacing issues */
     margin: 0;
     padding: 0;
   }
-  
+
   .awareness-box p {
     margin: 0 0 12px; /* bottom margin for spacing between paragraphs */
   }
-  
+
   /* Bottom-right specific styling */
   .share-story {
     display: flex;
@@ -323,36 +389,31 @@ ul {
     height: 100%; /* ensure the container takes the full available height */
     padding: 10px; /* adjust as needed */
   }
-  
+
   /* Make the button only as wide as its text needs */
   .btn.btn-chat {
     display: inline-flex;    /* keeps icon and text side by side */
     align-items: center;
     justify-content: center;
-  
-    background: #00C853;     /* your green color */
+    background: var(--primary-green);     /* your green color */
     color: #fff;
     padding: 10px 20px;
     border-radius: 30px;
     font-weight: bold;
     text-decoration: none;
-  
     width: auto;             /* ensure it does NOT stretch */
     max-width: none;         /* remove any global max-width if present */
     cursor: pointer;
-  
     transition: background 0.3s ease;
   }
-  
+
   .btn.btn-chat i {
     margin-left: 8px;
   }
-  
-  .btn.btn-chat:hover {
-    background: #00b14f;
-  }
 
-/* ---------- */
+  .btn.btn-chat:hover {
+    background: #00b14f; /* Slightly darker green */
+  }
 
 .email-contact {
     margin-top: 20px;
@@ -418,31 +479,23 @@ ul {
 
 /* --- Testimonials --- */
 .testimonial-title {
-    /* text-align: center; <-- REMOVE or comment out */
     line-height: 1.2;
     margin-bottom: 60px; /* Increased margin */
     display: flex; /* Use flexbox for side-by-side layout */
     align-items: center; /* Vertically align items */
     justify-content: center; /* Center the whole group */
     gap: 25px; /* Space between REAL and the text block */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-/* Updated "REAL" Text Styling */
 .real-text {
-    /* font-size: 3.5rem; <-- Adjust size as needed */
     font-size: 5.5rem; /* Make it larger */
-    /* font-weight: 300; <-- Make it bolder */
     font-weight: 700; /* Bolder */
-    /* border: 2px solid var(--text-light); <-- REMOVE border */
-    /* padding: 0 10px; <-- REMOVE padding */
-    /* display: inline-block; <-- REMOVE */
-    /* margin-bottom: 10px; <-- REMOVE margin */
     color: transparent; /* Make fill transparent */
     -webkit-text-stroke: 2px var(--text-light); /* Add white stroke (adjust width 1px/2px) */
     line-height: 1; /* Keep line height tight */
 }
 
-/* New Style for the Text Block Next to REAL */
 .testimonial-subtitle {
     font-size: 1.9rem; /* Adjust size */
     font-weight: 600; /* Bold */
@@ -546,15 +599,17 @@ cite {
 
 .footer-curve {
     position: absolute;
-    top: -40px;
+    top: -40px; /* Adjust based on curve height */
     left: 0;
     width: 100%;
-    height: 80px;
-    background-color: var(--dark-bg);
-    border-bottom-left-radius: 50% 40px;
-    border-bottom-right-radius: 50% 40px;
+    height: 80px; /* Height of the curve */
+    background-color: var(--dark-bg); /* Should match the section above */
+    /* Create the curve using border-radius */
+    border-bottom-left-radius: 50% 40px; /* Horizontal % | Vertical px */
+    border-bottom-right-radius: 50% 40px;/* Horizontal % | Vertical px */
     z-index: 1;
 }
+
 
 .footer-content {
     position: relative;
@@ -592,6 +647,10 @@ cite {
 .footer-social a:hover {
     color: var(--text-light);
 }
+.footer-social a:first-child {
+    margin-left: 0; /* Remove margin from first icon if needed */
+}
+
 
 .copyright {
     text-align: center;
@@ -603,10 +662,91 @@ cite {
 
 /* --- Responsive --- */
 
+/* Breakpoint for Hamburger Menu */
+@media (max-width: 945px) {
+
+    
+
+    .mobile-only {
+        display: block;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+
+    .main-nav {
+        /* Mobile menu container styles */
+        position: fixed;
+        top: 0;
+        right: -100%; /* Start off-screen */
+        width: 80%; /* Or 100% or other value */
+        max-width: 350px; /* Optional max width */
+        height: 100vh;
+        background-color: var(--mobile-nav-bg);
+        padding: calc(var(--header-height) + 30px) 30px 30px; /* Adjust padding */
+        margin: 0; /* Reset margin */
+        border-radius: 0; /* Reset border-radius */
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+        z-index: 1002; /* Above overlay */
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .main-nav.mobile-nav-active {
+        right: 0; /* Slide in */
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: flex-start; /* Align items left */
+        gap: 15px; /* Spacing between items */
+    }
+
+    .main-nav li {
+        margin: 0;
+        width: 100%; /* Make list items full width */
+    }
+
+    .main-nav a {
+        font-size: 1.1rem;
+        padding: 10px 0; /* Add padding for touch targets */
+        display: block; /* Make links block level */
+        width: 100%;
+    }
+
+    .main-nav a.btn-nav-join {
+        /* Adjust button style for mobile menu */
+        padding: 12px 20px;
+        text-align: center;
+        margin-top: 15px;
+        background-color: var(--primary-green); /* Ensure background */
+        color: var(--text-light); /* Ensure text color */
+        width: auto; /* Don't force full width */
+        display: inline-block; /* Make it behave like a button */
+    }
+     .nav-join-us-li {
+         margin-left: 0; /* Reset desktop margin */
+         margin-top: 20px; /* Add space above */
+         border-top: 1px solid var(--light-grey-bg); /* Optional separator */
+         padding-top: 20px;
+     }
+
+
+    .hamburger-btn {
+        display: block; /* Show hamburger */
+    }
+}
+
+
 @media (max-width: 992px) {
+    /* Existing styles for this breakpoint (other than nav) */
     h1 { font-size: 3.5rem; } /* Adjust hero h1 */
     h2 { font-size: 2.1rem; }
-    
+
     .awareness-chat-grid{
         grid-template-columns: 1fr;
     }
@@ -623,46 +763,26 @@ cite {
     .testimonial-slider {
         padding: 0 40px;
     }
-
-    .main-nav li {
-        margin: 0 10px;
-    }
-     .main-nav {
-        margin: 0 10px;
-    }
-    .logo { font-size: 1.6rem; }
-    .btn-nav-join { padding: 8px 20px; font-size: 0.9rem;}
 }
+
+/* Keep 945px as the breakpoint for nav changes */
+/* @media (max-width: 945px) { } - Already defined above */
+
 
 @media (max-width: 768px) {
     .section-padding { padding: 60px 0; }
 
-    .header-container {
-        flex-direction: column;
-        gap: 15px;
+    /* Header adjustments (Hamburger already handled) */
+     .header-container {
+        /* Adjust padding if needed */
+        padding: 0 15px;
     }
-    .main-nav {
-        order: 2;
-        margin: 0 auto;
-        width: fit-content;
-        padding: 8px 10px;
-    }
-     .main-nav ul {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 5px 10px;
-    }
-     .main-nav li {
-        margin: 0 5px;
-    }
-    .logo { order: 1; }
-    .btn-nav-join { order: 3; margin-top: 0;}
 
     .hero { min-height: 70vh; }
     /* Adjust hero h1 for smaller screens */
     .hero h1 { font-size: 3rem; line-height: 1.25; }
     .hero p { font-size: 1.05rem; }
-    .hero { padding-top: 180px; padding-bottom: 40px; }
+    .hero { padding-top: calc(var(--header-height) + 40px); padding-bottom: 40px; } /* Adjust top padding */
 
     .mission-vision-grid { grid-template-columns: 1fr; }
 
@@ -673,11 +793,14 @@ cite {
     .prev-btn { left: -5px; }
     .next-btn { right: -5px; }
 
-    .testimonial-content { padding: 20px; }
+    .testimonial-content { padding: 20px; } /* Padding adjusted */
     blockquote { font-size: 1rem; }
+    .testimonial-title { justify-content: center; text-align: center; } /* Center title elements */
+    .testimonial-subtitle { text-align: center; }
+
 
     .footer-details { flex-direction: column; align-items: center; text-align: center; gap: 30px;}
-    .footer-social { margin-top: 10px; }
+    .footer-social { margin-top: 10px; margin-left: 0; } /* Reset margin */
     .footer-social a { margin: 0 8px; }
 }
 
@@ -702,11 +825,15 @@ cite {
         padding: 10px 20px; /* Adjust padding */
     }
 
-    .real-text { font-size: 2.8rem; }
+    .real-text { font-size: 4rem; } /* Smaller "REAL" text */
+    .testimonial-subtitle { font-size: 1.5rem; }
     .avatar { font-size: 4rem; }
 
-    .footer-curve { height: 60px; top: -30px; }
+    .footer-curve { height: 60px; top: -30px; } /* Adjust curve */
 
-    .main-nav a { font-size: 0.9rem; }
-    .main-nav li { margin: 0 3px; }
+    /* Mobile Nav specific styles for very small screens if needed */
+    .main-nav {
+        width: 90%; /* Wider menu on small screens */
+        max-width: none;
+    }
 }

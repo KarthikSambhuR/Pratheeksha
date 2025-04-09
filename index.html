@@ -16,16 +16,22 @@
     <header class="site-header">
         <div class="container header-container">
             <div class="logo">PRATHEEKSHA</div>
-            <nav class="main-nav">
+            <nav class="main-nav" id="main-navigation">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Helpline</a></li>
                     <li><a href="#">Sessions</a></li>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">True Stories</a></li>
+                    <li class="mobile-only"><a href="#" class="btn btn-nav-join">Join Us</a></li>
                 </ul>
             </nav>
-            <a href="#" class="btn btn-nav-join">Join Us</a>
+            <span class="desktop-only"><a href="#" class="btn btn-nav-join">Join Us</a></span>
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
     <!-- ****** END HEADER SECTION ****** -->
@@ -79,31 +85,31 @@
                 <div class="awareness-box">
                   <h2 class="section-title">Create Awareness Where It Matters Most</h2>
                 </div>
-              
+
                 <!-- Top-right -->
                 <div class="awareness-box">
                   <p>
-                    Want to organize an anti-drug awareness session in your campus, 
-                    workplace, or community? We offer expert-led seminars, personal 
-                    testimonials, and interactive workshops tailored for students 
+                    Want to organize an anti-drug awareness session in your campus,
+                    workplace, or community? We offer expert-led seminars, personal
+                    testimonials, and interactive workshops tailored for students
                     and professionals.
                   </p>
                   <p class="email-contact">
-                    <strong>Mail us:</strong> 
+                    <strong>Mail us:</strong>
                     <a href="mailto:outreach@breakfree.org">outreach@breakfree.org</a>
                   </p>
                 </div>
-              
+
                 <!-- Bottom-left -->
                 <div class="awareness-box">
                   <p>
-                    <strong>You don’t have to reveal your name or details.</strong> 
-                    Our compassionate recovery mentors are ready to listen — 
-                    judgment-free, and with full confidentiality. Chat now 
+                    <strong>You don’t have to reveal your name or details.</strong>
+                    Our compassionate recovery mentors are ready to listen —
+                    judgment-free, and with full confidentiality. Chat now
                     anonymously and feel the weight lift.
                   </p>
                 </div>
-              
+
                 <!-- Bottom-right -->
                 <div class="awareness-box share-story">
                   <h3>Share Your Story Without Fear</h3>
@@ -142,15 +148,12 @@
 
         <section class="testimonials section-padding">
             <div class="container">
-                <!-- Updated H2 Structure -->
                 <h2 class="section-title testimonial-title">
                     <span class="real-text">REAL</span>
                     <div class="testimonial-subtitle">
                         People.<br> Courage.<br> Recovery.
                     </div>
                 </h2>
-                <!-- End Updated H2 Structure -->
-
                 <div class="testimonial-slider">
                     <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
                     <div class="testimonial-slides">
@@ -172,7 +175,6 @@
                                 </blockquote>
                             </div>
                         </div>
-                         <!-- Add more slides as needed -->
                     </div>
                     <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
                 </div>
@@ -190,7 +192,7 @@
     </main>
 
     <footer class="site-footer-bottom">
-        <div class="footer-curve"></div> <!-- For the curve effect -->
+        <div class="footer-curve"></div>
         <div class="container footer-content">
             <p class="footer-quote">"You don't have to fight alone. Whether it's you or someone you love, we're here to support, listen, and walk the journey together. Recovery is real. Healing is possible. Hope is here."</p>
             <div class="footer-details">
