@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- UPDATE THE TITLE FOR THIS PAGE -->
+    <title>Get Help - Pratheeksha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- For icons -->
+    <!-- LINK THE EXISTING CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ****** REUSE HEADER SECTION ****** -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">PRATHEEKSHA</div>
+            <nav class="main-nav" id="main-navigation">
+                <ul>
+                    <!-- Update links if needed, maybe highlight current page or remove nav -->
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#helpline">Helpline</a></li>
+                    <li><a href="index.html#sessions">Sessions</a></li>
+                    <li><a href="index.html#contact-us">Contact Us</a></li>
+                    <li><a href="index.html#true-stories">True Stories</a></li>
+                    <li><a>Get Help</a></li>
+                    <li class="mobile-only"><a href="#" class="btn btn-nav-join">Join Us</a></li>
+                </ul>
+            </nav>
+            <span class="desktop-only"><a href="#" class="btn btn-nav-join">Join Us</a></span>
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    <!-- ****** END HEADER SECTION ****** -->
+
+
+    <main>
+        <!-- ****** GET HELP CONTENT SECTION ****** -->
+        <section class="get-help-page section-padding" id="get-help">
+            <div class="container">
+
+                <h1 class="page-title text-center">Reach Out for Support</h1>
+                <p class="page-intro text-center">You're not alone. Help is available, and taking the first step is a sign of strength. Explore the resources below.</p>
+
+                <!-- Helpline Section -->
+                <div class="help-section helpline-details text-center">
+                    <h2 class="section-title">Immediate Help: 24/7 Helpline</h2>
+                    <p>If you need to talk to someone right away, please call. It's free, confidential, and available anytime.</p>
+                    <a href="tel:+911800XXXXXX" class="btn btn-helpline">+91 1800 XXXX XX</a>
+                    <p class="confidential-note">All conversations are 100% confidential.</p>
+                </div>
+
+                <!-- Other Contact Options Section -->
+                <div class="help-section other-contact">
+                    <h2 class="section-title text-center">More Ways to Connect</h2>
+                    <div class="contact-options-grid">
+                        <div class="contact-option-box">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <h3>Email Us</h3>
+                            <p>Prefer to write? Send us an email, and we'll get back to you with resources and support options.</p>
+                            <p class="email-contact">
+                                <a href="mailto:support@pratheeksha.org">support@pratheeksha.org</a>
+                            </p>
+                        </div>
+                        <div class="contact-option-box chat-box">
+                             <i class="fas fa-comments contact-icon"></i>
+                             <h3>Chat Anonymously</h3>
+                             <p>Want to talk without revealing your identity? Our anonymous chat connects you with a trained mentor.</p>
+                             <a href="chat/chat.html" class="btn btn-chat"> <!-- Ensure chat/chat.html exists or update path -->
+                                Chat Anonymously <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tips Section -->
+                <div class="help-section help-tips">
+                    <h2 class="section-title text-center">Tips for Reaching Out</h2>
+                    <div class="tips-grid">
+                         <div class="tip-box">
+                            <i class="fas fa-users tip-icon"></i>
+                            <h3>You Are Not Alone</h3>
+                            <p>Millions struggle with addiction. Connecting with others can make a huge difference.</p>
+                        </div>
+                         <div class="tip-box">
+                            <i class="fas fa-comment-dots tip-icon"></i>
+                            <h3>Be Honest (With Yourself & Others)</h3>
+                            <p>Acknowledging the problem is the first step. Openness helps others support you effectively.</p>
+                        </div>
+                         <div class="tip-box">
+                            <i class="fas fa-shield-alt tip-icon"></i>
+                            <h3>Find a Safe Space</h3>
+                            <p>Talk where you feel comfortable and won't be interrupted or judged.</p>
+                        </div>
+                         <div class="tip-box">
+                            <i class="fas fa-lock tip-icon"></i>
+                            <h3>Confidentiality is Key</h3>
+                            <p>Our services prioritize your privacy. You control what you share.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Go Home Button Section -->
+                <div class="go-home-section text-center">
+                    <a href="index.html" class="btn btn-secondary"><i class="fas fa-home"></i> Go Back to Home</a>
+                </div>
+
+            </div>
+        </section>
+        <!-- ****** END GET HELP CONTENT SECTION ****** -->
+    </main>
+
+    <!-- ****** REUSE FOOTER SECTION ****** -->
+    <footer class="site-footer-bottom">
+        <!-- Keep the curve if you like it on all pages -->
+        <div class="footer-curve"></div>
+        <div class="container footer-content">
+            <p class="footer-quote">"You don't have to fight alone. Whether it's you or someone you love, we're here to support, listen, and walk the journey together. Recovery is real. Healing is possible. Hope is here."</p>
+            <div class="footer-details">
+                <div class="footer-address">
+                    Address: Pratheeksha Foundation,<br>
+                    2nd Floor, Grace Tower,<br>
+                    Ernakulam, Kerala - 682018
+                </div>
+                <div class="footer-social" style="display: flex; gap: 10px; align-items: center;">
+                    <a href="#" aria-label="Instagram" style="font-size: 24px; color: #a0a0a0; display: inline-block; line-height: 1;">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="YouTube" style="font-size: 24px; color: #a0a0a0; display: inline-block; line-height: 1;">
+                      <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" aria-label="X (Twitter)" style="font-size: 24px; color: #a0a0a0; display: inline-block; line-height: 1;">
+                      <img src="twitter.svg" alt="X (Twitter)" style="width: 1em; height: 1em; vertical-align: middle; display: inline-block;">
+                    </a>
+                    <a href="#" aria-label="Facebook" style="font-size: 24px; color: #a0a0a0; display: inline-block; line-height: 1;">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="WhatsApp" style="font-size: 24px; color: #a0a0a0; display: inline-block; line-height: 1;">
+                      <i class="fab fa-whatsapp"></i>
+                    </a>
+                  </div>
+            </div>
+            <p class="copyright">© 2025 Pratheeksha. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- ****** END FOOTER SECTION ****** -->
+
+    <!-- LINK THE EXISTING SCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -839,3 +839,245 @@ cite {
         max-width: none;
     }
 }
+
+
+
+
+.get-help-page {
+    padding-top: calc(var(--header-height) + 60px); /* Adjust top padding */
+    padding-bottom: 60px;
+}
+
+.page-title {
+    font-size: 3rem; /* Adjust as needed */
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.page-intro {
+    font-size: 1.1rem;
+    color: #c7d1c9; /* Slightly lighter text */
+    max-width: 700px;
+    margin: 0 auto 50px; /* Center and add space below */
+}
+
+/* Spacing between help sections */
+.help-section {
+    margin-bottom: 60px;
+    padding: 30px; /* Add some internal padding */
+    background-color: rgba(79, 94, 84, 0.3); /* Slightly tinted background for sections */
+    border-radius: var(--border-radius-md);
+}
+
+.help-section:last-of-type { /* Remove margin from last section before Go Home button */
+     margin-bottom: 30px;
+}
+
+/* Style the section titles within the help page */
+.help-section .section-title {
+    font-size: 2.2rem; /* Slightly smaller than main section titles */
+    margin-bottom: 25px;
+    color: var(--primary-green); /* Use accent color */
+}
+
+/* Helpline Specific */
+.helpline-details p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Tips Section */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.tip-box {
+    background-color: var(--light-grey-bg); /* Use existing box color */
+    padding: 25px;
+    border-radius: var(--border-radius-sm);
+}
+
+.tip-icon {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+    display: block; /* Center icon */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tip-box h3 {
+    font-size: 1.3rem;
+    color: #fff; /* White heading for tips */
+    margin-bottom: 10px;
+}
+
+/* Other Contact Options */
+.contact-options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    align-items: stretch; /* Make boxes same height */
+}
+
+.contact-option-box {
+    background-color: var(--light-grey-bg);
+    padding: 30px;
+    border-radius: var(--border-radius-md);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-icon {
+    font-size: 3rem;
+    color: var(--primary-green);
+    margin-bottom: 20px;
+}
+
+.contact-option-box h3 {
+     font-size: 1.6rem;
+     color: #fff;
+     margin-bottom: 15px;
+}
+
+.contact-option-box .email-contact a {
+     color: var(--primary-green);
+     font-weight: 500;
+     text-decoration: underline;
+     word-break: break-all; /* Prevent long emails breaking layout */
+}
+.contact-option-box .email-contact a:hover {
+     text-decoration: none;
+}
+
+/* Make chat button stand out more if needed */
+.chat-box .btn-chat {
+    margin-top: auto; /* Push button to bottom if flex */
+    padding: 12px 35px; /* Slightly larger padding */
+}
+
+
+/* Go Home Button */
+.go-home-section {
+    margin-top: 40px; /* Space above button */
+    padding-top: 40px; /* More space */
+    border-top: 1px solid var(--light-grey-bg); /* Separator line */
+}
+
+/* Add secondary button style if it doesn't exist or needs adjustment */
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--primary-green);
+    color: var(--primary-green);
+    padding: 12px 30px; /* Consistent padding */
+    border-radius: 50px; /* Match other buttons */
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+    transform: translateY(-2px);
+}
+
+.btn-secondary i {
+    margin-right: 8px;
+}
+
+
+/* Responsive adjustments for Get Help page */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+    .page-intro {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+    .help-section .section-title {
+        font-size: 1.9rem;
+    }
+    .tips-grid {
+         grid-template-columns: 1fr; /* Stack tips on smaller screens */
+    }
+    .contact-options-grid {
+         grid-template-columns: 1fr; /* Stack contact options */
+    }
+}
+
+@media (max-width: 576px) {
+     .get-help-page {
+        padding-top: calc(var(--header-height) + 30px);
+    }
+    .page-title {
+        font-size: 2.1rem;
+    }
+     .help-section {
+        padding: 20px;
+    }
+    .help-section .section-title {
+        font-size: 1.7rem;
+    }
+    .btn-helpline {
+        font-size: 1.1rem;
+        padding: 10px 25px;
+    }
+}
+
+
+
+#scrollToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 998; /* Below header overlay (1000+), above most content */
+    border: none;
+    outline: none;
+    background-color: var(--primary-green); /* Use theme color */
+    color: var(--text-light); /* Light icon color */
+    cursor: pointer;
+    padding: 0; /* Remove default padding */
+    border-radius: 50%; /* Make it circular */
+    width: 50px;  /* Set fixed width */
+    height: 50px; /* Set fixed height */
+    font-size: 1.3rem; /* Adjust icon size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional subtle shadow */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px); /* Start slightly down for slide-in effect */
+
+    /* Flexbox to center icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#scrollToTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Slide into view */
+    /* display: flex; Already set above */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #1aa34a; /* Slightly darker green on hover */
+    transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+/* Adjust position slightly on smaller screens if needed */
+@media (max-width: 576px) {
+    #scrollToTopBtn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+        bottom: 20px;
+        right: 20px;
+    }
+}

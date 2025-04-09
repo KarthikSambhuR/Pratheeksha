@@ -80,4 +80,38 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation();
         });
     }
+
+    const scrollTopBtn = document.getElementById('scrollToTopBtn');
+    const scrollThreshold = 200; // Pixels from top to show the button
+
+    // Function to check scroll position and toggle button visibility
+    function toggleScrollTopButton() {
+        if (!scrollTopBtn) return; // Exit if button not found
+
+        if (window.pageYOffset > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            scrollTopBtn.classList.add('show');
+        } else {
+            scrollTopBtn.classList.remove('show');
+        }
+    }
+
+    // Function to scroll smoothly to top
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    // Add listeners if the button exists
+    if (scrollTopBtn) {
+        // Listen for scroll events
+        window.addEventListener('scroll', toggleScrollTopButton);
+
+        // Listen for click events on the button
+        scrollTopBtn.addEventListener('click', scrollToTop);
+
+        // Initial check in case the page loads already scrolled down
+        toggleScrollTopButton();
+    }
 });
