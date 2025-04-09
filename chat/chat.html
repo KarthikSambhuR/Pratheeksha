@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Mentor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="chat-page-body">
+    <div class="chat-container">
+        <header class="chat-header">
+            <button class="back-button" onclick="window.close();" title="Close Chat">←</button>
+             <div class="avatar mentor-avatar-header">A</div>
+            <div class="chat-with">Mentor Helpline</div>
+             <!-- Removed edit/change mentor buttons as they aren't functional -->
+            <div class="header-icons">
+                <div class="avatar user-avatar-header">U</div>
+            </div>
+        </header>
+
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will appear here -->
+             <div id="statusMessage" class="status-message" style="display: none; text-align: center; padding: 15px; color: white; background-color: rgba(0,0,0,0.3);">
+                 <!-- Status messages like "Connecting..." or "No mentor available..." -->
+             </div>
+        </div>
+
+        <footer class="chat-input-area">
+            <input type="text" id="messageInput" placeholder="Start Messaging..." disabled>
+            <button id="sendButton" class="send-button" disabled>➤</button>
+        </footer>
+    </div>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+    <!-- Config and App Logic -->
+    <script src="firebase-config.js"></script>
+    <script src="chat.js"></script>
+</body>
+</html>
