@@ -3,40 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helpline</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f0f0f0;
-            font-family: sans-serif;
-        }
-        .start-button {
-            padding: 15px 30px;
-            font-size: 1.2em;
-            cursor: pointer;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .start-button:hover {
-            background-color: #218838;
-        }
-    </style>
+    <title>Chat with Mentor</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <button class="start-button" onclick="startChat()">Start Anonymous Chat</button>
+<body class="chat-page-body">
+    <div class="chat-container">
+        <header class="chat-header">
+            <button class="back-button" onclick="window.location.href = '/';" title="Close Chat">←</button>
+             <div class="avatar mentor-avatar-header">A</div>
+            <div class="chat-with">Mentor Helpline</div>
+             
+            <div class="header-icons">
+                <div class="avatar user-avatar-header">U</div>
+            </div>
+        </header>
 
-    <script>
-        function startChat() {
-            // Open the chat window. The chat ID will be generated there.
-            window.location.href = 'chat.html';
-            window.open('chat.html', '_blank', 'width=850,height=750'); // Suggest dimensions
-        }
-    </script>
+        <div class="chat-messages" id="chatMessages">
+            
+             <div id="statusMessage" class="status-message" style="display: none; text-align: center; padding: 15px; color: white; background-color: rgba(0,0,0,0.3);">
+                 
+             </div>
+        </div>
+
+        <footer class="chat-input-area">
+            <input type="text" id="messageInput" placeholder="Start Messaging..." disabled>
+            <button id="sendButton" class="send-button" disabled>➤</button>
+        </footer>
+    </div>
+
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+    
+    <script src="firebase-config.js"></script>
+    <script src="chat.js"></script>
 </body>
 </html>

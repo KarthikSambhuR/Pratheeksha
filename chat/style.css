@@ -1,61 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
-/* === Root Variables === */
 :root {
-    /* Color Palette - Inspired by Pratheeksha Image */
-    --dark-bg: #1A2421; /* Sampled dark green/grey */
-    --container-bg-light: #2a3a35; /* Slightly lighter dark shade */
-    --accent-green: #3ddc84; /* Sampled bright green */
-    --accent-green-darker: #2fbf6e; /* Darker green for hover */
-    --light-text: #f0f0f0; /* Off-white/light grey text */
-    --dark-text: #212529; /* Dark text for light backgrounds */
-    --muted-light-text: #a0b0aa; /* Muted light text for placeholders etc. */
-    --border-color-dark: #44554f; /* Border color on dark backgrounds */
+    
+    --dark-bg: #1A2421; 
+    --container-bg-light: #2a3a35; 
+    --accent-green: #3ddc84; 
+    --accent-green-darker: #2fbf6e; 
+    --light-text: #f0f0f0; 
+    --dark-text: #212529; 
+    --muted-light-text: #a0b0aa; 
+    --border-color-dark: #44554f; 
     --white: #ffffff;
     --black: #000000;
 
-    /* Map to existing variable names + New Vars */
+    
     --chat-bg-color: var(--dark-bg);
-    --header-bg: var(--dark-bg); /* Can be same or slightly different */
-    --user-message-bg: var(--container-bg-light); /* User bubble background */
-    --mentor-message-bg: var(--white); /* Mentor bubble background */
-    --text-color-primary: var(--light-text); /* Default text on dark bg */
-    --text-color-on-light: var(--dark-text); /* Text on light elements (mentor bubble, input) */
-    --text-color-secondary: var(--muted-light-text); /* Placeholders on dark bg */
+    --header-bg: var(--dark-bg); 
+    --user-message-bg: var(--container-bg-light); 
+    --mentor-message-bg: var(--white); 
+    --text-color-primary: var(--light-text); 
+    --text-color-on-light: var(--dark-text); 
+    --text-color-secondary: var(--muted-light-text); 
     --header-text-color: var(--light-text);
-    --avatar-bg-user: #78909c; /* Neutral Grey for User Avatar */
-    --avatar-bg-mentor: var(--accent-green); /* Accent Green for Mentor Avatar */
-    --avatar-text-color: var(--dark-text); /* Dark text on green avatar */
-    --avatar-text-color-user: var(--light-text); /* Light text on grey avatar */
-    --input-bg: var(--white); /* White input field */
-    --input-text-color: var(--dark-text); /* Dark text in input field */
-    --input-placeholder-color: #6c757d; /* Standard dark placeholder color */
-    --input-border-color: var(--border-color-dark); /* Subtle border */
-    --input-focus-ring: rgba(61, 220, 132, 0.4); /* Accent green focus ring */
+    --avatar-bg-user: #78909c; 
+    --avatar-bg-mentor: var(--accent-green); 
+    --avatar-text-color: var(--dark-text); 
+    --avatar-text-color-user: var(--light-text); 
+    --input-bg: var(--white); 
+    --input-text-color: var(--dark-text); 
+    --input-placeholder-color: #6c757d; 
+    --input-border-color: var(--border-color-dark); 
+    --input-focus-ring: rgba(61, 220, 132, 0.4); 
     --button-bg: var(--accent-green);
     --button-hover-bg: var(--accent-green-darker);
-    --button-disabled-bg: #555; /* Dark grey disabled */
-    --button-text-color: var(--dark-text); /* Dark text on bright green button */
+    --button-disabled-bg: #555; 
+    --button-text-color: var(--dark-text); 
 
-    /* Mentor Dashboard Specific */
-    --mentor-dashboard-bg: var(--dark-bg); /* Dark theme for dashboard body */
-    --mentor-list-bg: var(--container-bg-light); /* List background */
+    
+    --mentor-dashboard-bg: var(--dark-bg); 
+    --mentor-list-bg: var(--container-bg-light); 
     --mentor-list-border: var(--border-color-dark);
-    --mentor-list-hover-bg: #3b4d47; /* Slightly lighter hover for list item */
+    --mentor-list-hover-bg: #3b4d47; 
     --mentor-list-active-bg: var(--accent-green);
     --mentor-list-active-text: var(--dark-text);
-    --status-pending: #ffc107; /* Amber */
-    --status-active: var(--accent-green); /* Use accent green */
-    --unread-indicator-color: #0d6efd; /* Standard Blue */
-    --closed-status-color: #6c757d; /* Grey for closed */
-    --unknown-status-color: #adb5bd; /* Lighter Grey for unknown */
+    --status-pending: #ffc107; 
+    --status-active: var(--accent-green); 
+    --unread-indicator-color: #0d6efd; 
+    --closed-status-color: #6c757d; 
+    --unknown-status-color: #adb5bd; 
 
-    /* Typography & Spacing */
+    
     --base-font-size: 16px;
-    --font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Use Poppins if available */
+    --font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
     --border-radius-sm: 4px;
     --border-radius-md: 8px;
-    --border-radius-lg: 18px; /* For bubbles/input */
+    --border-radius-lg: 18px; 
     --spacing-xs: 4px;
     --spacing-sm: 8px;
     --spacing-md: 12px;
@@ -63,7 +62,6 @@
     --spacing-xl: 20px;
 }
 
-/* === Base Styles === */
 html {
     box-sizing: border-box;
     font-size: var(--base-font-size);
@@ -77,44 +75,41 @@ body {
     margin: 0;
     font-family: var(--font-family);
     line-height: 1.5;
-    color: var(--text-color-primary); /* Default light text */
-    background-color: var(--mentor-dashboard-bg); /* Default dark body bg */
+    color: var(--text-color-primary); 
+    background-color: var(--mentor-dashboard-bg); 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Specific body style for the centered user chat page */
 body.chat-page-body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: var(--chat-bg-color); /* Dark background covers full page */
+    background-color: var(--chat-bg-color); 
     padding: var(--spacing-md);
 }
 
-/* === Chat Container (User and Mentor Display Panel) === */
 .chat-container {
     width: 100%;
     max-width: 850px;
     height: clamp(500px, 90vh, 750px);
-    background-color: var(--chat-bg-color); /* Dark BG */
+    background-color: var(--chat-bg-color); 
     border-radius: var(--border-radius-md);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25); /* Slightly stronger shadow on dark */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25); 
     display: flex;
     flex-direction: column;
     overflow: hidden;
     margin: auto;
 }
 
-/* === Chat Header === */
 .chat-header {
     display: flex;
     align-items: center;
     padding: var(--spacing-md) var(--spacing-lg);
-    background-color: var(--header-bg); /* Dark BG */
-    color: var(--header-text-color); /* Light Text */
-    border-bottom: 1px solid var(--border-color-dark); /* Darker border */
+    background-color: var(--header-bg); 
+    color: var(--header-text-color); 
+    border-bottom: 1px solid var(--border-color-dark); 
     flex-shrink: 0;
     gap: var(--spacing-md);
 }
@@ -143,35 +138,30 @@ body.chat-page-body {
     justify-content: center;
     align-items: center;
     font-weight: 600;
-    /* Text color set individually based on background */
+    
     font-size: 1.1em;
     flex-shrink: 0;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.3); /* Slightly adjusted shadow */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3); 
 }
 
 .mentor-avatar-header,
 .mentor-avatar {
-    background-color: var(--avatar-bg-mentor); /* Accent Green */
-    color: var(--avatar-text-color); /* Dark Text */
+    background-color: var(--avatar-bg-mentor); 
+    color: var(--avatar-text-color); 
 }
 
 .user-avatar-header,
 .user-avatar {
-     background-color: var(--avatar-bg-user); /* Neutral Grey */
-     color: var(--avatar-text-color-user); /* Light Text */
+     background-color: var(--avatar-bg-user); 
+     color: var(--avatar-text-color-user); 
 }
 
-/* Header specific avatar positioning */
 .chat-header .header-icons {
-    margin-left: auto; /* Pushes icons to the right */
+    margin-left: auto; 
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm); /* Adds space between icons (like close button and avatar) */
+    gap: var(--spacing-sm); 
 }
-/* No margin needed now if using gap */
-/* .chat-header .header-icons .avatar {
-    margin-left: var(--spacing-md);
-} */
 
 .chat-with {
     font-weight: 600;
@@ -180,43 +170,40 @@ body.chat-page-body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--header-text-color); /* Ensure header text is light */
+    color: var(--header-text-color); 
 }
 
-/* === Chat Messages Area === */
 .chat-messages {
     flex-grow: 1;
     padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-sm);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    background-color: var(--chat-bg-color); /* Dark BG */
+    background-color: var(--chat-bg-color); 
     gap: var(--spacing-xs);
 }
 
-/* Scrollbar Styling (Webkit) - Dark Theme */
 .chat-messages::-webkit-scrollbar,
-.chat-list::-webkit-scrollbar { /* Apply to mentor list too */
+.chat-list::-webkit-scrollbar { 
     width: 8px;
 }
 .chat-messages::-webkit-scrollbar-track,
 .chat-list::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.1); /* Darker track */
+    background: rgba(0, 0, 0, 0.1); 
     border-radius: 4px;
 }
 .chat-messages::-webkit-scrollbar-thumb,
 .chat-list::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.2); /* Lighter thumb */
+    background-color: rgba(255, 255, 255, 0.2); 
     border-radius: 4px;
     border: 2px solid transparent;
     background-clip: content-box;
 }
 .chat-messages::-webkit-scrollbar-thumb:hover,
 .chat-list::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(255, 255, 255, 0.35); /* Brighter hover thumb */
+    background-color: rgba(255, 255, 255, 0.35); 
 }
 
-/* === Individual Messages === */
 .message-container {
     display: flex;
     margin-bottom: var(--spacing-md);
@@ -232,34 +219,32 @@ body.chat-page-body {
     align-self: flex-end;
 }
 
-/* User messages (Right) */
 .message-container.user-message {
     align-self: flex-end;
     flex-direction: row-reverse;
 }
 .message-container.user-message .message-bubble {
-    background-color: var(--user-message-bg); /* Container light dark */
-    color: var(--text-color-primary); /* Light text */
+    background-color: var(--user-message-bg); 
+    color: var(--text-color-primary); 
     border-radius: var(--border-radius-lg) var(--border-radius-lg) var(--border-radius-sm) var(--border-radius-lg);
 }
 
-/* Mentor messages (Left) */
 .message-container.mentor-message {
     align-self: flex-start;
     flex-direction: row;
 }
 .message-container.mentor-message .message-bubble {
-    background-color: var(--mentor-message-bg); /* White */
-    color: var(--text-color-on-light); /* Dark Text */
+    background-color: var(--mentor-message-bg); 
+    color: var(--text-color-on-light); 
     border-radius: var(--border-radius-lg) var(--border-radius-lg) var(--border-radius-lg) var(--border-radius-sm);
 }
-/* System messages (Left, distinct style) */
-.system-avatar { /* Avatar for system messages */
-     background-color: #607d8b; /* Muted blue-grey for system avatar */
+
+.system-avatar { 
+     background-color: #607d8b; 
      color: var(--light-text);
 }
-.message-container.mentor-message .system-avatar ~ .message-bubble { /* System message bubble specifically */
-    background-color: rgba(255, 255, 255, 0.1); /* Very subtle dark bubble */
+.message-container.mentor-message .system-avatar ~ .message-bubble { 
+    background-color: rgba(255, 255, 255, 0.1); 
     color: var(--muted-light-text);
     font-style: italic;
     font-size: 0.9em;
@@ -267,10 +252,9 @@ body.chat-page-body {
     box-shadow: none;
 }
 
-
 .message-bubble {
     padding: var(--spacing-sm) var(--spacing-md);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Adjusted shadow */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); 
     word-wrap: break-word;
     hyphens: auto;
 }
@@ -280,26 +264,25 @@ body.chat-page-body {
     line-height: 1.45;
 }
 
-/* === Chat Input Area === */
 .chat-input-area {
     display: flex;
     align-items: center;
     padding: var(--spacing-md) var(--spacing-lg);
-    border-top: 1px solid var(--border-color-dark); /* Dark border */
-    background-color: var(--header-bg); /* Match header dark */
+    border-top: 1px solid var(--border-color-dark); 
+    background-color: var(--header-bg); 
     flex-shrink: 0;
     gap: var(--spacing-md);
 }
 
-#messageInput, /* User chat input */
-.chat-display-panel .chat-input-area input /* Mentor chat input */
+#messageInput, 
+.chat-display-panel .chat-input-area input 
  {
     flex-grow: 1;
     padding: var(--spacing-md) var(--spacing-lg);
-    border: 1px solid var(--input-border-color); /* Use dark border */
+    border: 1px solid var(--input-border-color); 
     border-radius: var(--border-radius-lg);
-    background-color: var(--input-bg); /* White */
-    color: var(--input-text-color); /* Dark Text */
+    background-color: var(--input-bg); 
+    color: var(--input-text-color); 
     outline: none;
     font-size: 1em;
     line-height: 1.4;
@@ -308,32 +291,30 @@ body.chat-page-body {
 }
 #messageInput:focus,
 .chat-display-panel .chat-input-area input:focus {
-    border-color: var(--accent-green); /* Highlight with accent */
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1), 0 0 0 3px var(--input-focus-ring); /* Focus ring */
+    border-color: var(--accent-green); 
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1), 0 0 0 3px var(--input-focus-ring); 
 }
 #messageInput::placeholder,
 .chat-display-panel .chat-input-area input::placeholder {
-    color: var(--input-placeholder-color); /* Dark placeholder */
+    color: var(--input-placeholder-color); 
     opacity: 0.8;
 }
 
-/* Disabled state for ANY input in input area */
 .chat-input-area input:disabled {
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle dark disabled */
+    background-color: rgba(255, 255, 255, 0.1); 
     border-color: transparent;
     color: var(--muted-light-text);
     cursor: not-allowed;
     box-shadow: none;
 }
 .chat-input-area input:disabled::placeholder {
-     color: var(--muted-light-text); /* Match text color */
+     color: var(--muted-light-text); 
      opacity: 0.7;
 }
 
-
 .send-button {
-    background-color: var(--button-bg); /* Accent Green */
-    color: var(--button-text-color); /* Dark Text */
+    background-color: var(--button-bg); 
+    color: var(--button-text-color); 
     border: none;
     border-radius: 50%;
     width: 44px;
@@ -348,55 +329,51 @@ body.chat-page-body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 .send-button:hover {
-    background-color: var(--button-hover-bg); /* Darker Green */
+    background-color: var(--button-hover-bg); 
 }
 .send-button:active {
      transform: scale(0.95);
 }
 .send-button:disabled {
-    background-color: var(--button-disabled-bg); /* Dark Grey Disabled */
-    color: #aaa; /* Light grey text on dark disabled button */
+    background-color: var(--button-disabled-bg); 
+    color: #aaa; 
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
 }
 
-/* === Status Messages (User Chat) === */
 .status-message {
     padding: var(--spacing-sm) var(--spacing-md);
-    margin: var(--spacing-md) auto var(--spacing-lg); /* Added bottom margin */
-    color: var(--light-text); /* Light text */
-    background-color: rgba(0, 0, 0, 0.4); /* Default dark semi-transparent */
+    margin: var(--spacing-md) auto var(--spacing-lg); 
+    color: var(--light-text); 
+    background-color: rgba(0, 0, 0, 0.4); 
     border-radius: var(--border-radius-sm);
     text-align: center;
     font-size: 0.9em;
     max-width: 80%;
     box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    /* Ensure it stays above messages if needed, but usually inserted before */
-    order: -1; /* Makes it appear before appended messages in flex */
+    
+    order: -1; 
 }
-/* Error specific status message style */
-.status-message[style*="rgb(200, 0, 0)"] { /* Target error background color */
-    background-color: rgba(180, 0, 0, 0.7); /* Darker red */
+
+.status-message[style*="rgb(200, 0, 0)"] { 
+    background-color: rgba(180, 0, 0, 0.7); 
     font-weight: 500;
 }
-
-
-/* === MENTOR DASHBOARD SPECIFIC STYLES === */
 
 .mentor-container {
     display: flex;
     height: 100vh;
-    background-color: var(--mentor-dashboard-bg); /* Dark BG */
+    background-color: var(--mentor-dashboard-bg); 
 }
 
 .chat-list-panel {
     width: 300px;
     flex-shrink: 0;
-    border-right: 1px solid var(--mentor-list-border); /* Dark Border */
+    border-right: 1px solid var(--mentor-list-border); 
     display: flex;
     flex-direction: column;
-    background-color: var(--mentor-list-bg); /* Slightly Lighter Dark BG */
+    background-color: var(--mentor-list-bg); 
 }
 
 .chat-list-panel h2 {
@@ -404,8 +381,8 @@ body.chat-page-body {
     padding: var(--spacing-lg) var(--spacing-lg);
     font-size: 1.25em;
     font-weight: 600;
-    color: var(--light-text); /* Light Text */
-    border-bottom: 1px solid var(--mentor-list-border); /* Dark Border */
+    color: var(--light-text); 
+    border-bottom: 1px solid var(--mentor-list-border); 
     flex-shrink: 0;
 }
 
@@ -415,14 +392,14 @@ body.chat-page-body {
     margin: 0;
     overflow-y: auto;
     flex-grow: 1;
-    /* Scrollbar style inherited from .chat-messages */
+    
 }
 
 .chat-list-item {
     padding: var(--spacing-md) var(--spacing-lg);
     cursor: pointer;
-    border-bottom: 1px solid var(--mentor-list-border); /* Dark Border */
-    transition: background-color 0.15s ease, opacity 0.2s ease; /* Added opacity transition */
+    border-bottom: 1px solid var(--mentor-list-border); 
+    transition: background-color 0.15s ease, opacity 0.2s ease; 
     font-size: 0.95em;
     white-space: nowrap;
     overflow: hidden;
@@ -431,34 +408,33 @@ body.chat-page-body {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
-    color: var(--text-color-primary); /* Light Text */
+    color: var(--text-color-primary); 
 }
 
 .chat-list-item:hover {
-    background-color: var(--mentor-list-hover-bg); /* Lighter dark hover */
+    background-color: var(--mentor-list-hover-bg); 
 }
 
 .chat-list-item.active {
-    background-color: var(--mentor-list-active-bg); /* Accent Green */
-    color: var(--mentor-list-active-text); /* Dark Text */
+    background-color: var(--mentor-list-active-bg); 
+    color: var(--mentor-list-active-text); 
     font-weight: 600;
 }
 .chat-list-item.active .status-dot {
-     /* Halo effect */
+     
      box-shadow: 0 0 0 2px var(--mentor-list-bg), 0 0 0 3px var(--accent-green);
 }
 .chat-list-item.active .unread-indicator {
-    display: none !important; /* Ensure hidden when active */
+    display: none !important; 
 }
 
-/* Status indicators in list */
 .chat-list-item .status-dot {
     height: 10px;
     width: 10px;
     border-radius: 50%;
     display: inline-block;
     flex-shrink: 0;
-    box-shadow: 0 0 2px rgba(0,0,0,0.3); /* Adjusted shadow */
+    box-shadow: 0 0 2px rgba(0,0,0,0.3); 
     transition: background-color 0.2s ease;
 }
 .chat-list-item .status-pending { background-color: var(--status-pending); }
@@ -480,80 +456,74 @@ body.chat-page-body {
     border-radius: 50%;
     margin-left: auto;
     flex-shrink: 0;
-    box-shadow: 0 0 3px rgba(13, 110, 253, 0.5); /* Blue glow */
-    display: inline-block; /* Ensure it shows */
+    box-shadow: 0 0 3px rgba(13, 110, 253, 0.5); 
+    display: inline-block; 
 }
 .chat-list-item .unread-indicator[style*="display: none;"] {
-    display: none !important; /* Ensure JS hiding works */
+    display: none !important; 
 }
 
-/* Style for closed chats in the list (optional) */
 .chat-list-item.closed-chat {
-    opacity: 0.65; /* Fade out closed chats slightly */
+    opacity: 0.65; 
 }
 .chat-list-item.closed-chat:hover {
-     opacity: 0.8; /* Slightly less faded on hover */
+     opacity: 0.8; 
 }
 .chat-list-item.closed-chat.active {
-     opacity: 1; /* Fully visible when selected */
+     opacity: 1; 
 }
 .chat-list-item.closed-chat .status-dot {
-    background-color: var(--closed-status-color); /* Ensure correct color */
+    background-color: var(--closed-status-color); 
 }
-
 
 .chat-display-panel {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    background-color: var(--chat-bg-color); /* Dark BG */
-    height: 100vh; /* Ensure it takes full viewport height */
-    max-height: 100vh; /* Prevent growing beyond viewport */
+    background-color: var(--chat-bg-color); 
+    height: 100vh; 
+    max-height: 100vh; 
 }
 
-/* Adjust mentor display panel content (uses same classes as user chat) */
 .chat-display-panel .chat-header {
     background-color: var(--header-bg);
     border-bottom-color: var(--border-color-dark);
 }
 .chat-display-panel .chat-messages {
-     height: auto; /* Let it grow within the flex container */
-     /* Max height is implicitly handled by parent */
+     height: auto; 
+     
 }
 .chat-display-panel .chat-input-area {
     background-color: var(--header-bg);
     border-top-color: var(--border-color-dark);
 }
-/* Mentor input styles already covered by shared rule */
 
-
-/* New Mentor Close Button Style */
 .close-chat-button {
     background: none;
     border: none;
-    color: var(--muted-light-text); /* Muted color initially */
-    font-size: 1.9em; /* Make it larger */
+    color: var(--muted-light-text); 
+    font-size: 1.9em; 
     font-weight: bold;
     line-height: 1;
     padding: 0 var(--spacing-sm);
-    margin: 0; /* Reset margin */
+    margin: 0; 
     cursor: pointer;
     opacity: 0.7;
     transition: opacity 0.2s ease, color 0.2s ease, transform 0.1s ease;
-    /* order: -1; */ /* Let default order place it first in .header-icons */
-    display: flex; /* Ensure flex properties apply */
+     
+    display: flex; 
     align-items: center;
     justify-content: center;
-    height: 30px; /* Give it some height */
-    width: 30px; /* Give it some width */
-    flex-shrink: 0; /* Prevent shrinking */
-    border-radius: 4px; /* Slightly rounded corners */
+    height: 30px; 
+    width: 30px; 
+    flex-shrink: 0; 
+    border-radius: 4px; 
 }
 
 .close-chat-button:hover {
-    color: var(--light-text); /* Brighter on hover */
+    color: var(--light-text); 
     opacity: 1;
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle hover background */
+    background-color: rgba(255, 255, 255, 0.1); 
 }
 .close-chat-button:active {
     transform: scale(0.9);
@@ -567,18 +537,16 @@ body.chat-page-body {
     transform: none;
 }
 .close-chat-button[style*="display: none;"] {
-    display: none !important; /* Override for hiding */
+    display: none !important; 
 }
 
-
-/* Placeholder in mentor view */
 #noChatSelected {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
-    color: var(--muted-light-text); /* Muted light text on dark background */
+    color: var(--muted-light-text); 
     font-style: italic;
     font-size: 1.1em;
     flex-grow: 1;
@@ -593,25 +561,24 @@ body.chat-page-body {
     color: var(--muted-light-text);
 }
 
-/* Ensure correct alignment overrides for mentor view if needed */
 .chat-display-panel .message-container.user-message {
-    /* Uses default user message alignment (right) */
+    
     flex-direction: row-reverse;
 }
 .chat-display-panel .message-container.mentor-message {
-    /* Uses default mentor message alignment (left) */
+    
     flex-direction: row;
 }
-/* Explicitly set bubble colors again for specificity if needed */
+
 .chat-display-panel .message-container.user-message .message-bubble {
-   background-color: var(--user-message-bg); /* Container light dark */
-   color: var(--text-color-primary); /* Light text */
+   background-color: var(--user-message-bg); 
+   color: var(--text-color-primary); 
 }
 .chat-display-panel .message-container.mentor-message .message-bubble {
-   background-color: var(--mentor-message-bg); /* White */
-   color: var(--text-color-on-light); /* Dark Text */
+   background-color: var(--mentor-message-bg); 
+   color: var(--text-color-on-light); 
 }
-/* System message bubble style in mentor view */
+
 .chat-display-panel .message-container.mentor-message .system-avatar ~ .message-bubble {
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--muted-light-text);

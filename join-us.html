@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us - Volunteer - Pratheeksha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .form-container {
+            max-width: 700px;
+            margin: 40px auto 0;
+            background-color: var(--light-grey-bg);
+            padding: 40px;
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .join-us-page .form-group label {
+            margin-bottom: 8px;
+            color: var(--text-light);
+            display: block;
+        }
+        .join-us-page .form-group input[type="text"],
+        .join-us-page .form-group input[type="email"],
+        .join-us-page .form-group input[type="tel"],
+        .join-us-page .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: var(--border-radius-sm);
+            background-color: #e0e8e3;
+            color: var(--text-dark);
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        .join-us-page .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .join-us-page .form-group label .required-star {
+            color: var(--primary-green);
+            margin-left: 4px;
+        }
+        .join-us-page .btn-primary {
+            background-color: var(--primary-green);
+            color: var(--text-light);
+            border-radius: 50px;
+            padding: 12px 35px;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        .join-us-page .btn-primary:hover {
+            background-color: #1aa34a;
+        }
+        #form-success-message {
+            display: none;
+            padding: 20px;
+            background-color: var(--primary-green);
+            color: var(--text-light);
+            border-radius: var(--border-radius-sm);
+            text-align: center;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">PRATHEEKSHA</div>
+            <nav class="main-nav" id="main-navigation">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#helpline">Helpline</a></li>
+                    <li><a href="index.html#sessions">Sessions</a></li>
+                    <li><a href="index.html#contact-us">Contact Us</a></li>
+                    <li><a href="index.html#true-stories">True Stories</a></li>
+                    <li><a href="get-help.html">Get Help</a></li>
+                    <li class="mobile-only"><a class="btn btn-nav-join">Join Us</a></li>
+                </ul>
+            </nav>
+            <span class="desktop-only"><a class="btn btn-nav-join">Join Us</a></span>
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="join-us-page section-padding" id="join-us">
+            <div class="container">
+                <h1 class="page-title text-center">Become a Pratheeksha Volunteer</h1>
+                <p class="page-intro text-center">Your time, skills, and passion can make a real difference. Join our dedicated team and help us spread hope and support recovery in our community.</p>
+
+                <div class="form-container">
+                    <h2 class="text-center" style="color: #fff; margin-bottom: 30px;">Volunteer Application Form</h2>
+
+                    <form id="volunteer-form" method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLScOlYY730ZoOmmMbBtgZZrHOl6e1WO4pO19xiNl7GkqReXN2A/formResponse">
+
+                        <div class="form-group">
+                            <label for="volunteer-name">Full Name<span class="required-star">*</span></label>
+                            <input type="text" id="volunteer-name" name="entry.441499605" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="volunteer-email">Email Address<span class="required-star">*</span></label>
+                            <input type="email" id="volunteer-email" name="entry.73173593" placeholder="you@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="volunteer-phone">Phone Number<span class="required-star">*</span></label>
+                            <input type="tel" id="volunteer-phone" name="entry.2025197461" placeholder="Include country/area code if applicable" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="volunteer-city">City / Location<span class="required-star">*</span></label>
+                            <input type="text" id="volunteer-city" name="entry.352417539" placeholder="Your city or general location" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="volunteer-availability">Availability<span class="required-star">*</span></label>
+                            <textarea id="volunteer-availability" name="entry.1900486659" placeholder="E.g., Weekday evenings, Weekends, Specific hours per week" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="volunteer-skills">Skills & Interests<span class="required-star">*</span></label>
+                            <textarea id="volunteer-skills" name="entry.1791537271" placeholder="What skills can you offer? What areas interest you most?" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="volunteer-motivation">Why do you want to volunteer with Pratheeksha?</label>
+                            <textarea id="volunteer-motivation" name="entry.1261188807" placeholder="Share a bit about your motivation (optional but helpful)"></textarea>
+                        </div>
+
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary">Submit Application</button>
+                        </div>
+                    </form>
+
+                    <div id="form-success-message">
+                        Thank you for your application! We have received your details and will be in touch soon.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    
+    <footer class="site-footer-bottom">
+        <div class="footer-curve"></div>
+        <div class="container footer-content">
+            <p class="footer-quote">"You don't have to fight alone. Whether it's you or someone you love, we're here to support, listen, and walk the journey together. Recovery is real. Healing is possible. Hope is here."</p>
+            <div class="footer-details">
+                <div class="footer-address">
+                    Address: Pratheeksha Foundation,<br>
+                    2nd Floor, Grace Tower,<br>
+                    Ernakulam, Kerala - 682018
+                </div>
+                <div class="footer-social" style="display: flex; gap: 10px; align-items: center;">
+                    <a href="#" aria-label="Instagram" style="font-size: 24px; color: #a0a0a0; display: inline-block; line-height: 1;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube" style="font-size: 24px; color: #a0a0a0; display: inline-block; line-height: 1;"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="X (Twitter)" style="font-size: 24px; color: #a0a0a0; display: inline-block; line-height: 1;"><img src="twitter.svg" alt="X (Twitter)" style="width: 1em; height: 1em; vertical-align: middle; display: inline-block;"></a>
+                    <a href="#" aria-label="Facebook" style="font-size: 24px; color: #a0a0a0; display: inline-block; line-height: 1;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="WhatsApp" style="font-size: 24px; color: #a0a0a0; display: inline-block; line-height: 1;"><i class="fab fa-whatsapp"></i></a>
+                  </div>
+            </div>
+            <p class="copyright">© 2025 Pratheeksha. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('volunteer-form');
+            const successMessage = document.getElementById('form-success-message');
+
+            if (form) {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault(); 
+
+                    const formData = new FormData(form);
+                    const url = form.action; 
+
+                    fetch(url, {
+                        method: 'POST',
+                        body: formData,
+                        mode: 'no-cors'
+                    })
+                    .then(() => {
+                        form.reset();
+                        form.style.display = 'none';
+                        successMessage.style.display = 'block';
+                        window.scrollTo({
+                            top: successMessage.offsetTop - 100,
+                            behavior: 'smooth'
+                         });
+                    })
+                    .catch(error => {
+                        console.error('Error submitting form:', error);
+                        alert('There was an error submitting your application. Please try again later.');
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

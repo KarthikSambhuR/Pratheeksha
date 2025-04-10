@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Testimonial Slider Logic ---
+
     const slides = document.querySelectorAll('.testimonial-slides .slide');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
@@ -26,48 +26,43 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(0);
     }
 
-    // --- Hamburger Menu Logic ---
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mainNav = document.getElementById('main-navigation');
     const body = document.body;
 
-    // Function to close the mobile menu
     function closeMobileMenu() {
         mainNav.classList.remove('mobile-nav-active');
         hamburgerBtn.classList.remove('active');
         body.classList.remove('no-scroll');
-        hamburgerBtn.setAttribute('aria-expanded', 'false'); // Update aria attribute
+        hamburgerBtn.setAttribute('aria-expanded', 'false'); 
     }
 
-    // Function to toggle the mobile menu
     function toggleMobileMenu() {
         const isActive = mainNav.classList.toggle('mobile-nav-active');
         hamburgerBtn.classList.toggle('active');
         body.classList.toggle('no-scroll');
-        hamburgerBtn.setAttribute('aria-expanded', isActive ? 'true' : 'false'); // Update aria attribute
+        hamburgerBtn.setAttribute('aria-expanded', isActive ? 'true' : 'false'); 
     }
 
     if (hamburgerBtn && mainNav) {
-        // Toggle menu on hamburger click
+
         hamburgerBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent click from immediately triggering the document listener
+            e.stopPropagation(); 
             toggleMobileMenu();
         });
 
-        // Close menu when a link inside the nav is clicked
         const navLinks = mainNav.querySelectorAll('a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                // Only close if the menu is actually active (it should be if a link is clicked)
+
                 if (mainNav.classList.contains('mobile-nav-active')) {
                     closeMobileMenu();
                 }
             });
         });
 
-        // Close menu when clicking outside the menu
         document.addEventListener('click', (event) => {
-            // Check if the menu is active and the click was outside the nav and outside the hamburger
+
             if (mainNav.classList.contains('mobile-nav-active') &&
                 !mainNav.contains(event.target) &&
                 !hamburgerBtn.contains(event.target)) {
@@ -75,18 +70,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Prevent clicks inside the menu from closing it (due to event propagation)
         mainNav.addEventListener('click', (e) => {
             e.stopPropagation();
         });
     }
 
     const scrollTopBtn = document.getElementById('scrollToTopBtn');
-    const scrollThreshold = 200; // Pixels from top to show the button
+    const scrollThreshold = 200; 
 
-    // Function to check scroll position and toggle button visibility
     function toggleScrollTopButton() {
-        if (!scrollTopBtn) return; // Exit if button not found
+        if (!scrollTopBtn) return; 
 
         if (window.pageYOffset > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
             scrollTopBtn.classList.add('show');
@@ -95,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Function to scroll smoothly to top
     function scrollToTop() {
         window.scrollTo({
             top: 0,
@@ -103,15 +95,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Add listeners if the button exists
     if (scrollTopBtn) {
-        // Listen for scroll events
+
         window.addEventListener('scroll', toggleScrollTopButton);
 
-        // Listen for click events on the button
         scrollTopBtn.addEventListener('click', scrollToTop);
 
-        // Initial check in case the page loads already scrolled down
         toggleScrollTopButton();
     }
 });

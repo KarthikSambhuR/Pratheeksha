@@ -1,20 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
-/* --- Global Styles & Variables --- */
 :root {
-    --primary-green: #1db954; /* Green from buttons */
-    --dark-bg: #1b241e; /* Dark greenish-grey background */
-    --light-grey-bg: #4f5e54; /* Lighter grey for form/boxes */
+    --primary-green: #1db954; 
+    --dark-bg: #1b241e; 
+    --light-grey-bg: #4f5e54; 
     --text-light: #ffffff;
     --text-dark: #333333;
-    --button-yellow: #cddc39; /* Yellowish Join Us button */
+    --button-yellow: #cddc39; 
     --font-primary: 'Poppins', sans-serif;
-    --header-nav-bg: rgba(60, 60, 60, 0.8); /* Semi-transparent dark grey for nav container */
-    --mobile-nav-bg: #1f2b23; /* Slightly different dark for mobile menu */
+    --header-nav-bg: rgba(60, 60, 60, 0.8); 
+    --mobile-nav-bg: #1f2b23; 
     --border-radius-sm: 5px;
     --border-radius-md: 15px;
     --border-radius-lg: 25px;
-    --header-height: 80px; /* Define header height for positioning */
+    --header-height: 80px; 
 }
 
 * {
@@ -33,11 +32,8 @@ body {
     color: var(--text-light);
     line-height: 1.7;
     font-size: 16px;
-    position: relative; /* Needed for potential overflow control */
+    position: relative; 
 }
-
-
-
 
 .mobile-only {
     display: none;
@@ -47,11 +43,6 @@ body {
     display: block;
 }
 
-
-
-
-
-/* Prevent body scroll when mobile menu is open */
 body.no-scroll {
     overflow: hidden;
 }
@@ -68,7 +59,6 @@ h1, h2, h3 {
     margin-bottom: 1rem;
 }
 
-/* Default H1 size - will be overridden in Hero */
 h1 { font-size: 2.8rem; }
 h2 { font-size: 2.5rem; }
 h3 { font-size: 1.5rem; color: #9eacd1; }
@@ -90,7 +80,7 @@ ul {
 .btn {
     display: inline-block;
     padding: 12px 30px;
-    border-radius: var(--border-radius-lg); /* Default large radius */
+    border-radius: var(--border-radius-lg); 
     font-weight: 500;
     text-align: center;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -106,26 +96,24 @@ ul {
 .btn-nav-join {
     background-color: var(--primary-green);
     color: var(--text-light);
-    border-radius: var(--border-radius-lg); /* Make Join Us slightly less rounded */
-    padding: 10px 25px; /* Adjust padding to match visual */
-    /* Remove desktop-specific display property here, handle in media query */
+    border-radius: var(--border-radius-lg); 
+    padding: 10px 25px; 
+    
 }
 
-/* Specific styles for Hero buttons */
 .hero .btn-primary,
 .hero .btn-secondary {
     background-color: var(--primary-green);
     color: var(--text-light);
-    margin: 5px; /* Add small margin for spacing */
-    border-radius: 50px; /* More rounded pill shape */
-    padding: 12px 35px; /* Adjust padding */
-    font-weight: 600; /* Bolder text */
+    margin: 5px; 
+    border-radius: 50px; 
+    padding: 12px 35px; 
+    font-weight: 600; 
 }
-/* Remove default margin-right only for primary button */
+
 .hero .btn-primary {
     margin-right: 5px;
 }
-
 
 .btn-helpline {
     background-color: transparent;
@@ -146,16 +134,15 @@ ul {
     background-color: var(--primary-green);
     color: var(--text-light);
     padding: 10px 25px;
-    border-radius: 50px; /* Make chat button rounded too */
+    border-radius: 50px; 
 }
 .btn-chat i { margin-left: 8px; }
 
 .btn-join-community {
     background-color: var(--primary-green);
     color: var(--text-light);
-    width: 100%;
     margin-top: 15px;
-    border-radius: 50px; /* Rounded */
+    border-radius: 50px; 
 }
 
 .btn-movement-join {
@@ -165,7 +152,7 @@ ul {
     padding: 15px 50px;
     font-size: 1.1rem;
     margin-top: 20px;
-    border-radius: 50px; /* Rounded */
+    border-radius: 50px; 
 }
 
 .section-padding {
@@ -181,24 +168,23 @@ ul {
     margin-bottom: 40px;
 }
 
-/* --- Header --- */
 .site-header {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 15px 0; /* Slightly adjust padding */
+    padding: 15px 0; 
     z-index: 1000;
     height: var(--header-height);
-    display: flex; /* Use flex on header itself */
-    align-items: center; /* Vertically center content */
+    display: flex; 
+    align-items: center; 
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%; /* Ensure container takes full width */
+    width: 100%; 
 }
 
 .logo {
@@ -208,13 +194,12 @@ ul {
     flex-shrink: 0;
 }
 
-/* Desktop Navigation Styles */
 .main-nav {
     background-color: var(--header-nav-bg);
     border-radius: 50px;
     padding: 8px 15px;
     margin: 0 20px;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Added for mobile */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; 
 }
 
 .main-nav ul {
@@ -233,29 +218,26 @@ ul {
     position: relative;
     white-space: nowrap;
 }
-.main-nav a.btn-nav-join { /* Style the link within li */
-     padding: 10px 25px; /* Keep original button padding */
-     display: inline-block; /* Ensure it behaves like a block */
+.main-nav a.btn-nav-join { 
+     padding: 10px 25px; 
+     display: inline-block; 
 }
 
-.main-nav a:hover:not(.btn-nav-join) { /* Exclude button from simple hover color change */
+.main-nav a:hover:not(.btn-nav-join) { 
     color: #ddd;
 }
 
-/* Hide the li containing the join button on desktop if needed, adjust as per design */
 .nav-join-us-li {
-     margin-left: 15px; /* Space before button */
+     margin-left: 15px; 
 }
 
-
-/* Hamburger Button Styles */
 .hamburger-btn {
-    display: none; /* Hidden by default */
+    display: none; 
     background: none;
     border: none;
     cursor: pointer;
     padding: 10px;
-    z-index: 10001; /* Above header content, below mobile menu overlay */
+    z-index: 10001; 
 }
 
 .hamburger-btn span {
@@ -267,7 +249,6 @@ ul {
     transition: all 0.3s ease-in-out;
 }
 
-/* Optional: Style for active hamburger (X) */
 .hamburger-btn.active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -278,16 +259,14 @@ ul {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-
-/* --- Hero Section --- */
 .hero {
-    min-height: 90vh; /* Slightly taller if needed */
-    /* Background image with gradient overlay */
+    min-height: 90vh; 
+    
     background-image:
         linear-gradient(
             to bottom,
-            rgba(58, 74, 64, 0) 65%, /* Start fade */
-            var(--dark-bg) 100%      /* End fade */
+            rgba(58, 74, 64, 0) 65%, 
+            var(--dark-bg) 100%      
         ),
         url('background.png');
     background-size: cover;
@@ -297,33 +276,30 @@ ul {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: calc(var(--header-height) + 60px); /* Adjust padding based on header */
-    padding-bottom: 60px; /* Add some bottom padding */
+    padding-top: calc(var(--header-height) + 60px); 
+    padding-bottom: 60px; 
     position: relative;
 }
-
 
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 900px; /* Allow slightly wider content */
+    max-width: 900px; 
 }
 
-/* Updated Hero H1 styling */
 .hero h1 {
     color: #dddddd;
-    font-size: 4.5rem; /* Larger font size */
-    font-weight: 700; /* Bolder */
-    line-height: 1.2; /* Adjust line spacing */
-    margin-bottom: 25px; /* Space below heading */
+    font-size: 4.5rem; 
+    font-weight: 700; 
+    line-height: 1.2; 
+    margin-bottom: 25px; 
 }
 
-/* Styling for Hero paragraph */
 .hero p {
-    font-size: 1.15rem; /* Slightly larger paragraph text */
-    font-weight: 400; /* Regular weight */
-    max-width: 700px; /* Limit width */
-    margin: 0 auto 35px; /* Center and add space below */
+    font-size: 1.15rem; 
+    font-weight: 400; 
+    max-width: 700px; 
+    margin: 0 auto 35px; 
     line-height: 1.7;
 }
 
@@ -331,8 +307,6 @@ ul {
     margin-top: 30px;
 }
 
-
-/* --- Mission / Vision --- */
 .mission-vision-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -350,8 +324,6 @@ ul {
     font-size: 1.8rem;
 }
 
-
-/* --- Helpline --- */
 .helpline-intro {
     font-size: 1.1rem;
     max-width: 600px;
@@ -364,13 +336,11 @@ ul {
     margin-top: 10px;
 }
 
-/* --- Awareness / Chat --- */
-
 .awareness-chat-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;  /* 2 columns */
-    gap: 40px;                      /* spacing between cells */
-    align-items: start;             /* top-align each cell in its row */
+    grid-template-columns: 1fr 1fr;  
+    gap: 40px;                      
+    align-items: start;             
   }
 
   .awareness-box {
@@ -379,32 +349,32 @@ ul {
   }
 
   .awareness-box p {
-    margin: 0 0 12px; /* bottom margin for spacing between paragraphs */
+    margin: 0 0 12px; 
   }
 
-  /* Bottom-right specific styling */
+  
   .share-story {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* centers children vertically */
-    align-items: flex-start; /* or center if you need them centered horizontally */
-    height: 100%; /* ensure the container takes the full available height */
-    padding: 10px; /* adjust as needed */
+    justify-content: center; 
+    align-items: flex-start; 
+    height: 100%; 
+    padding: 10px; 
   }
 
-  /* Make the button only as wide as its text needs */
+  
   .btn.btn-chat {
-    display: inline-flex;    /* keeps icon and text side by side */
+    display: inline-flex;    
     align-items: center;
     justify-content: center;
-    background: var(--primary-green);     /* your green color */
+    background: var(--primary-green);     
     color: #fff;
     padding: 10px 20px;
     border-radius: 30px;
     font-weight: bold;
     text-decoration: none;
-    width: auto;             /* ensure it does NOT stretch */
-    max-width: none;         /* remove any global max-width if present */
+    width: auto;             
+    max-width: none;         
     cursor: pointer;
     transition: background 0.3s ease;
   }
@@ -414,7 +384,7 @@ ul {
   }
 
   .btn.btn-chat:hover {
-    background: #00b14f; /* Slightly darker green */
+    background: #00b14f; 
   }
 
 .email-contact {
@@ -434,7 +404,6 @@ ul {
     margin-bottom: 15px;
 }
 
-/* --- Connect --- */
 .connect-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -479,39 +448,37 @@ ul {
     line-height: 1.8;
 }
 
-/* --- Testimonials --- */
 .testimonial-title {
     line-height: 1.2;
-    margin-bottom: 60px; /* Increased margin */
-    display: flex; /* Use flexbox for side-by-side layout */
-    align-items: center; /* Vertically align items */
-    justify-content: center; /* Center the whole group */
-    gap: 25px; /* Space between REAL and the text block */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin-bottom: 60px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 25px; 
+    flex-wrap: wrap; 
 }
 
 .real-text {
-    font-size: 5.5rem; /* Make it larger */
-    font-weight: 700; /* Bolder */
-    color: transparent; /* Make fill transparent */
-    -webkit-text-stroke: 2px var(--text-light); /* Add white stroke (adjust width 1px/2px) */
-    line-height: 1; /* Keep line height tight */
+    font-size: 5.5rem; 
+    font-weight: 700; 
+    color: transparent; 
+    -webkit-text-stroke: 2px var(--text-light); 
+    line-height: 1; 
 }
 
 .testimonial-subtitle {
-    font-size: 1.9rem; /* Adjust size */
-    font-weight: 600; /* Bold */
-    line-height: 1.4; /* Adjust line spacing */
-    text-align: left; /* Align text to the left */
+    font-size: 1.9rem; 
+    font-weight: 600; 
+    line-height: 1.4; 
+    text-align: left; 
     color: var(--text-light);
 }
-
 
 .testimonial-slider {
     position: relative;
     max-width: 700px;
     margin: 0 auto;
-    padding: 0 50px; /* Keep space for arrows */
+    padding: 0 50px; 
 }
 
 .testimonial-slides .slide {
@@ -582,13 +549,11 @@ cite {
 .prev-btn { left: 0; }
 .next-btn { right: 0; }
 
-/* --- Movement --- */
 .movement p {
     max-width: 700px;
     margin: 0 auto 20px;
 }
 
-/* --- Footer --- */
 .site-footer-bottom {
     background-color: #000000;
     color: #a0a0a0;
@@ -601,17 +566,16 @@ cite {
 
 .footer-curve {
     position: absolute;
-    top: -40px; /* Adjust based on curve height */
+    top: -40px; 
     left: 0;
     width: 100%;
-    height: 80px; /* Height of the curve */
-    background-color: var(--dark-bg); /* Should match the section above */
-    /* Create the curve using border-radius */
-    border-bottom-left-radius: 50% 40px; /* Horizontal % | Vertical px */
-    border-bottom-right-radius: 50% 40px;/* Horizontal % | Vertical px */
+    height: 80px; 
+    background-color: var(--dark-bg); 
+    
+    border-bottom-left-radius: 50% 40px; 
+    border-bottom-right-radius: 50% 40px;
     z-index: 1;
 }
-
 
 .footer-content {
     position: relative;
@@ -650,9 +614,8 @@ cite {
     color: var(--text-light);
 }
 .footer-social a:first-child {
-    margin-left: 0; /* Remove margin from first icon if needed */
+    margin-left: 0; 
 }
-
 
 .copyright {
     text-align: center;
@@ -662,9 +625,6 @@ cite {
     padding-top: 20px;
 }
 
-/* --- Responsive --- */
-
-/* Breakpoint for Hamburger Menu */
 @media (max-width: 945px) {
 
     
@@ -677,76 +637,73 @@ cite {
         display: none;
     }
 
-
     .main-nav {
-        /* Mobile menu container styles */
+        
         position: fixed;
         top: 0;
-        right: -100%; /* Start off-screen */
-        width: 80%; /* Or 100% or other value */
-        max-width: 350px; /* Optional max width */
+        right: -100%; 
+        width: 80%; 
+        max-width: 350px; 
         height: 100vh;
         background-color: var(--mobile-nav-bg);
-        padding: calc(var(--header-height) + 30px) 30px 30px; /* Adjust padding */
-        margin: 0; /* Reset margin */
-        border-radius: 0; /* Reset border-radius */
+        padding: calc(var(--header-height) + 30px) 30px 30px; 
+        margin: 0; 
+        border-radius: 0; 
         box-shadow: -5px 0 15px rgba(0,0,0,0.2);
-        z-index: 1002; /* Above overlay */
+        z-index: 1002; 
         opacity: 0;
         visibility: hidden;
     }
 
     .main-nav.mobile-nav-active {
-        right: 0; /* Slide in */
+        right: 0; 
         opacity: 1;
         visibility: visible;
     }
 
     .main-nav ul {
         flex-direction: column;
-        align-items: flex-start; /* Align items left */
-        gap: 15px; /* Spacing between items */
+        align-items: flex-start; 
+        gap: 15px; 
     }
 
     .main-nav li {
         margin: 0;
-        width: 100%; /* Make list items full width */
+        width: 100%; 
     }
 
     .main-nav a {
         font-size: 1.1rem;
-        padding: 10px 0; /* Add padding for touch targets */
-        display: block; /* Make links block level */
+        padding: 10px 0; 
+        display: block; 
         width: 100%;
     }
 
     .main-nav a.btn-nav-join {
-        /* Adjust button style for mobile menu */
+        
         padding: 12px 20px;
         text-align: center;
         margin-top: 15px;
-        background-color: var(--primary-green); /* Ensure background */
-        color: var(--text-light); /* Ensure text color */
-        width: auto; /* Don't force full width */
-        display: inline-block; /* Make it behave like a button */
+        background-color: var(--primary-green); 
+        color: var(--text-light); 
+        width: auto; 
+        display: inline-block; 
     }
      .nav-join-us-li {
-         margin-left: 0; /* Reset desktop margin */
-         margin-top: 20px; /* Add space above */
-         border-top: 1px solid var(--light-grey-bg); /* Optional separator */
+         margin-left: 0; 
+         margin-top: 20px; 
+         border-top: 1px solid var(--light-grey-bg); 
          padding-top: 20px;
      }
 
-
     .hamburger-btn {
-        display: block; /* Show hamburger */
+        display: block; 
     }
 }
 
-
 @media (max-width: 992px) {
-    /* Existing styles for this breakpoint (other than nav) */
-    h1 { font-size: 3.5rem; } /* Adjust hero h1 */
+    
+    h1 { font-size: 3.5rem; } 
     h2 { font-size: 2.1rem; }
 
     .awareness-chat-grid{
@@ -767,24 +724,20 @@ cite {
     }
 }
 
-/* Keep 945px as the breakpoint for nav changes */
-/* @media (max-width: 945px) { } - Already defined above */
-
-
 @media (max-width: 768px) {
     .section-padding { padding: 60px 0; }
 
-    /* Header adjustments (Hamburger already handled) */
+    
      .header-container {
-        /* Adjust padding if needed */
+        
         padding: 0 15px;
     }
 
     .hero { min-height: 70vh; }
-    /* Adjust hero h1 for smaller screens */
+    
     .hero h1 { font-size: 3rem; line-height: 1.25; }
     .hero p { font-size: 1.05rem; }
-    .hero { padding-top: calc(var(--header-height) + 40px); padding-bottom: 40px; } /* Adjust top padding */
+    .hero { padding-top: calc(var(--header-height) + 40px); padding-bottom: 40px; } 
 
     .mission-vision-grid { grid-template-columns: 1fr; }
 
@@ -795,20 +748,19 @@ cite {
     .prev-btn { left: -5px; }
     .next-btn { right: -5px; }
 
-    .testimonial-content { padding: 20px; } /* Padding adjusted */
+    .testimonial-content { padding: 20px; } 
     blockquote { font-size: 1rem; }
-    .testimonial-title { justify-content: center; text-align: center; } /* Center title elements */
+    .testimonial-title { justify-content: center; text-align: center; } 
     .testimonial-subtitle { text-align: center; }
 
-
     .footer-details { flex-direction: column; align-items: center; text-align: center; gap: 30px;}
-    .footer-social { margin-top: 10px; margin-left: 0; } /* Reset margin */
+    .footer-social { margin-top: 10px; margin-left: 0; } 
     .footer-social a { margin: 0 8px; }
 }
 
 @media (max-width: 576px) {
     body { font-size: 15px; }
-    /* Further adjust hero h1 for very small screens */
+    
     .hero h1 { font-size: 2.4rem; line-height: 1.3; }
     .hero p { font-size: 1rem; }
     h2 { font-size: 1.9rem; }
@@ -816,78 +768,71 @@ cite {
 
     .hero-buttons {
         display: flex;
-        flex-direction: column; /* Stack buttons */
+        flex-direction: column; 
         gap: 15px;
         align-items: center;
     }
     .hero .btn-primary,
     .hero .btn-secondary {
-        margin: 0; /* Remove horizontal margins */
-        width: 70%; /* Control width */
-        padding: 10px 20px; /* Adjust padding */
+        margin: 0; 
+        width: 70%; 
+        padding: 10px 20px; 
     }
 
-    .real-text { font-size: 4rem; } /* Smaller "REAL" text */
+    .real-text { font-size: 4rem; } 
     .testimonial-subtitle { font-size: 1.5rem; }
     .avatar { font-size: 4rem; }
 
-    .footer-curve { height: 60px; top: -30px; } /* Adjust curve */
+    .footer-curve { height: 60px; top: -30px; } 
 
-    /* Mobile Nav specific styles for very small screens if needed */
+    
     .main-nav {
-        width: 90%; /* Wider menu on small screens */
+        width: 90%; 
         max-width: none;
     }
 }
 
-
-
-
 .get-help-page {
-    padding-top: calc(var(--header-height) + 60px); /* Adjust top padding */
+    padding-top: calc(var(--header-height) + 60px); 
     padding-bottom: 60px;
 }
 
 .page-title {
-    font-size: 3rem; /* Adjust as needed */
+    font-size: 3rem; 
     color: var(--text-light);
     margin-bottom: 15px;
 }
 
 .page-intro {
     font-size: 1.1rem;
-    color: #c7d1c9; /* Slightly lighter text */
+    color: #c7d1c9; 
     max-width: 700px;
-    margin: 0 auto 50px; /* Center and add space below */
+    margin: 0 auto 50px; 
 }
 
-/* Spacing between help sections */
 .help-section {
     margin-bottom: 60px;
-    padding: 30px; /* Add some internal padding */
-    background-color: rgba(79, 94, 84, 0.3); /* Slightly tinted background for sections */
+    padding: 30px; 
+    background-color: rgba(79, 94, 84, 0.3); 
     border-radius: var(--border-radius-md);
 }
 
-.help-section:last-of-type { /* Remove margin from last section before Go Home button */
+.help-section:last-of-type { 
      margin-bottom: 30px;
 }
 
-/* Style the section titles within the help page */
 .help-section .section-title {
-    font-size: 2.2rem; /* Slightly smaller than main section titles */
+    font-size: 2.2rem; 
     margin-bottom: 25px;
-    color: var(--primary-green); /* Use accent color */
+    color: var(--primary-green); 
 }
 
-/* Helpline Specific */
 .helpline-details p {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Tips Section */
 .tips-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -896,7 +841,7 @@ cite {
 }
 
 .tip-box {
-    background-color: var(--light-grey-bg); /* Use existing box color */
+    background-color: var(--light-grey-bg); 
     padding: 25px;
     border-radius: var(--border-radius-sm);
 }
@@ -905,23 +850,22 @@ cite {
     font-size: 2.5rem;
     color: var(--primary-green);
     margin-bottom: 15px;
-    display: block; /* Center icon */
+    display: block; 
     margin-left: auto;
     margin-right: auto;
 }
 
 .tip-box h3 {
     font-size: 1.3rem;
-    color: #fff; /* White heading for tips */
+    color: #fff; 
     margin-bottom: 10px;
 }
 
-/* Other Contact Options */
 .contact-options-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
-    align-items: stretch; /* Make boxes same height */
+    align-items: stretch; 
 }
 
 .contact-option-box {
@@ -950,33 +894,29 @@ cite {
      color: var(--primary-green);
      font-weight: 500;
      text-decoration: underline;
-     word-break: break-all; /* Prevent long emails breaking layout */
+     word-break: break-all; 
 }
 .contact-option-box .email-contact a:hover {
      text-decoration: none;
 }
 
-/* Make chat button stand out more if needed */
 .chat-box .btn-chat {
-    margin-top: auto; /* Push button to bottom if flex */
-    padding: 12px 35px; /* Slightly larger padding */
+    margin-top: auto; 
+    padding: 12px 35px; 
 }
 
-
-/* Go Home Button */
 .go-home-section {
-    margin-top: 40px; /* Space above button */
-    padding-top: 40px; /* More space */
-    border-top: 1px solid var(--light-grey-bg); /* Separator line */
+    margin-top: 40px; 
+    padding-top: 40px; 
+    border-top: 1px solid var(--light-grey-bg); 
 }
 
-/* Add secondary button style if it doesn't exist or needs adjustment */
 .btn-secondary {
     background-color: transparent;
     border: 2px solid var(--primary-green);
     color: var(--primary-green);
-    padding: 12px 30px; /* Consistent padding */
-    border-radius: 50px; /* Match other buttons */
+    padding: 12px 30px; 
+    border-radius: 50px; 
 }
 
 .btn-secondary:hover {
@@ -989,8 +929,6 @@ cite {
     margin-right: 8px;
 }
 
-
-/* Responsive adjustments for Get Help page */
 @media (max-width: 768px) {
     .page-title {
         font-size: 2.5rem;
@@ -1003,10 +941,10 @@ cite {
         font-size: 1.9rem;
     }
     .tips-grid {
-         grid-template-columns: 1fr; /* Stack tips on smaller screens */
+         grid-template-columns: 1fr; 
     }
     .contact-options-grid {
-         grid-template-columns: 1fr; /* Stack contact options */
+         grid-template-columns: 1fr; 
     }
 }
 
@@ -1029,31 +967,29 @@ cite {
     }
 }
 
-
-
 #scrollToTopBtn {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed;
     bottom: 25px;
     right: 25px;
-    z-index: 998; /* Below header overlay (1000+), above most content */
+    z-index: 998; 
     border: none;
     outline: none;
-    background-color: var(--primary-green); /* Use theme color */
-    color: var(--text-light); /* Light icon color */
+    background-color: var(--primary-green); 
+    color: var(--text-light); 
     cursor: pointer;
-    padding: 0; /* Remove default padding */
-    border-radius: 50%; /* Make it circular */
-    width: 50px;  /* Set fixed width */
-    height: 50px; /* Set fixed height */
-    font-size: 1.3rem; /* Adjust icon size */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional subtle shadow */
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    padding: 0; 
+    border-radius: 50%; 
+    width: 50px;  
+    height: 50px; 
+    font-size: 1.3rem; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, background-color 0.3s ease, transform 0.3s ease; 
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px); /* Start slightly down for slide-in effect */
+    transform: translateY(10px); 
 
-    /* Flexbox to center icon */
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1062,16 +998,15 @@ cite {
 #scrollToTopBtn.show {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0); /* Slide into view */
-    /* display: flex; Already set above */
+    transform: translateY(0); 
+    
 }
 
 #scrollToTopBtn:hover {
-    background-color: #1aa34a; /* Slightly darker green on hover */
-    transform: translateY(-2px); /* Subtle lift on hover */
+    background-color: #1aa34a; 
+    transform: translateY(-2px); 
 }
 
-/* Adjust position slightly on smaller screens if needed */
 @media (max-width: 576px) {
     #scrollToTopBtn {
         width: 45px;
