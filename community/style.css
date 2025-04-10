@@ -392,3 +392,40 @@ body {
   }
 }
 
+.avatar {
+    width: 32px; 
+    height: 32px; 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1em; 
+    flex-shrink: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+    align-self: flex-end; 
+    
+    
+}
+
+.message-container.user-message {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+.message-container.user-message .message-bubble {
+    background-color: var(--user-message-bg);
+    color: var(--text-color-primary);
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) var(--border-radius-sm) var(--border-radius-lg);
+}
+
+.message-container.mentor-message {
+    align-self: flex-start;
+    flex-direction: row;
+}
+.message-container.mentor-message .message-bubble {
+    background-color: var(--mentor-message-bg);
+    color: var(--text-color-on-light);
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) var(--border-radius-lg) var(--border-radius-sm);
+}
+

@@ -1,12 +1,12 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyB_1LndigtBkR3gO3E5GQIbEvKsGfUN7TQ",
-    authDomain: "pratheeksha-web.firebaseapp.com",
-    projectId: "pratheeksha-web",
-    databaseURL: "https://pratheeksha-web-default-rtdb.asia-southeast1.firebasedatabase.app", 
-    storageBucket: "pratheeksha-web.firebasestorage.app",
-    messagingSenderId: "444143241341",
-    appId: "1:444143241341:web:434b2ba0d5e9de4519c914",
-    measurementId: "G-SF8911EQT0"
+    apiKey: "XXXXXXXXXXXXXXXXXXXXXXXX",
+    authDomain: "XXXXXXXXXXXXXXXXXXXXXXXX.firebaseapp.com",
+    projectId: "XXXXXXXXXXXXXXXXXXXXXXXX-web",
+    databaseURL: "https://XXXXXXXXXXXXXXXXXXXXXXXX.asia-southeast1.firebasedatabase.app",
+    storageBucket: "XXXXXXXXXXXXXXXXXXXXXXXX-web.appspot.com",
+    messagingSenderId: "XXXXXXXXXXXXXXXXXXXXXXXX",
+    appId: "1:XXXXXXXXXXXXXXXXXXXXXXXX:web:434b2ba0d5e9de4519c914",
+    measurementId: "G-XXXXXXXXXXXXXXXXXXXXXXXX"
 };
   
   const app = firebase.initializeApp(firebaseConfig);
