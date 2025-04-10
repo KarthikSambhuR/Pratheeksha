@@ -3,11 +3,7 @@
 <p align="center">A safe digital space for people battling addiction to seek support and connect anonymously with mentors.</p>
 
 <p align="center">
-  <a href="https://pratheeksha.pages.dev/" target="_blank"><strong>🚀 Live Website</strong></a> •
-  <a href="#features">✨ Features</a> •
-  <a href="#tech-stack">🛠 Tech Stack</a> •
-  <a href="#screenshots">📸 Screenshots</a> •
-  <a href="#contributors">🤝 Contributors</a>
+  <a href="https://pratheeksha.pages.dev/" target="_blank"><strong>🚀 Live Website</strong></a>
 </p>
 
 ---
@@ -94,14 +90,6 @@ If no staff is online, the platform gently redirects users to an emergency helpl
     </td>
   </tr>
 </table>
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT**.
-
-MIT License. Use it, modify it, spread the hope 💚
 
 ---
 
