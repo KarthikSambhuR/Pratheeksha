@@ -15,7 +15,7 @@ let mentorsPresenceRef = null;
 let presenceListenerRef = null; 
 
 const NO_MENTOR_TIMEOUT_MS = 45000; 
-const NO_MENTOR_PHONE = "1-800-EXAMPLE"; 
+const NO_MENTOR_PHONE = "+91 14446"; 
 
 function generateChatId() {
     const timestamp = Date.now();
